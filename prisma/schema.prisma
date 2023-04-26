@@ -9,28 +9,21 @@ datasource db {
   provider = "postgresql"
   url      = env("DATABASE_URL")
 
+
 }
-model customer{
-  name String
-  email_id String @unique
-  phone_number Int
-  customer_id Int @unique @id
-  age Int
-  address String
-}
-model reviews{
-  rating Float
-  reviews String
-  service_name String
-  review_id Int @id @unique
-  serviceprovider_id Int @unique
-  customer_id Int @unique
-}
-model searchservice{
-  customer_id Int @unique
-  service_name String
-  service_id Int @id @unique
+model login{
+  customer_id Int @id @unique
+  customer_email String @unique  @db.VarChar(40)
+  password String  @db.VarChar(15)
   
-
-
+}
+model Customers{
+  name String @db.VarChar(30)
+  email_id String @unique  @db.VarChar(40)
+  phone_number Int
+  customer_id Int @id @unique
+  age Int
+  address String  @db.VarChar(40)
+  
+  
 }
