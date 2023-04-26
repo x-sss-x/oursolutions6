@@ -18,8 +18,19 @@ model createaccount{
   age Int
   address String  @db.VarChar(40)
   phone_number Int
+  login login[]
+
+}
+
+model login{
+  name String @db.VarChar(30)
+  email_id String @unique  @db.VarChar(40)
+  phone_number Int
+  login createaccount @relation(fields: [customer_id], references: [customer_id])
+  customer_id String @db.Uuid @unique
+}
 
  
   
 
-}
+
