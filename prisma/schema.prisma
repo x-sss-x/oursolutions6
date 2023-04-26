@@ -23,5 +23,8 @@ model reviews{
   reviews String
   service_name String
   review_id Int @id @unique
+  serviceprovider_id Int @unique
+  customer_id Int @unique
+
   
 }
