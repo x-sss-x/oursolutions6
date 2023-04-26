@@ -21,6 +21,7 @@ model Customer{
  
 customerupdateprofile Customerupdateprofile[]
 searchhistory searchhistory[]
+searchservice searchservice[]
 }
 
 
@@ -48,6 +49,7 @@ model Serviceprovider{
 searchhistory searchhistory[]
 bookingserviceprovider bookingserviceprovider[]
  review  review[]
+ searchservice searchservice[]
 }
 
 
@@ -88,4 +90,11 @@ model review{
  service_id String @db.Uuid @unique
  rating Float
  review_content String
+}
+model searchservice{
+  searchservice Customer @relation(fields: [customer_id], references: [customer_id])
+  customer_id String @db.Uuid @unique
+  service_name String
+ searchservices service @relation(fields: [service_id], references: [service_id])
+ service_id String @db.Uuid @unique
 }
