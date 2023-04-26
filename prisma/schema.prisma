@@ -11,23 +11,47 @@ datasource db {
 
 
 }
-model login{
+model createaccount{
   customer_id String  @id @default(uuid()) @db.Uuid
   customer_email String @unique  @db.VarChar(40)
   password String  @db.VarChar(15)
-  Customer Customer[]
+  age Int
+  address String  @db.VarChar(40)
+  phone_number Int
+login login[]
+  Customer Customerupdateprofile[]
+  forgotpassword forgotpassword[]
+
   
   
   
 }
-model Customer{
+model login{
   name String @db.VarChar(30)
   email_id String @unique  @db.VarChar(40)
   phone_number Int
-  customer login @relation(fields: [customer_id], references: [customer_id])
+  login createaccount @relation(fields: [customer_id], references: [customer_id])
+  customer_id String @db.Uuid @unique
+}
+
+model Customerupdateprofile{
+  name String @db.VarChar(30)
+  email_id String @unique  @db.VarChar(40)
+  phone_number Int
+  customerupdateprofile createaccount @relation(fields: [customer_id], references: [customer_id])
   customer_id String @db.Uuid @unique
   age Int
   address String  @db.VarChar(40)
   
   
+}
+model forgotpassword{
+  name String @db.VarChar(30)
+  email_id String @unique  @db.VarChar(40)
+  phone_number Int
+  forgotpassword createaccount @relation(fields: [customer_id], references: [customer_id])
+  customer_id String @db.Uuid @unique
+ 
+  
+
 }
