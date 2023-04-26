@@ -18,10 +18,10 @@ model customer{
   age Int
   address String
 }
-model recent_feedback{
+model reviews{
   rating Float
   reviews String
   service_name String
-  review_id @id @unique
+  review_id Int @id @unique
   
 }
