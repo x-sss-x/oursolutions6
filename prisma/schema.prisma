@@ -25,6 +25,12 @@ model reviews{
   review_id Int @id @unique
   serviceprovider_id Int @unique
   customer_id Int @unique
-
+}
+model searchservice{
+  customer_id Int @unique
+  service_name String
+  service_id Int @id @unique
   
+
+
 }
