@@ -19,6 +19,7 @@ model createaccount{
   address String  @db.VarChar(40)
   phone_number Int
   login login[]
+  forgotpassword forgotpassword[]
 
 }
 
@@ -30,7 +31,14 @@ model login{
   customer_id String @db.Uuid @unique
 }
 
+
+model forgotpassword{
+  name String @db.VarChar(30)
+  email_id String @unique  @db.VarChar(40)
+  phone_number Int
+  forgotpassword createaccount @relation(fields: [customer_id], references: [customer_id])
+  customer_id String @db.Uuid @unique
  
   
 
-
+}
