@@ -16,4 +16,5 @@ model customer{
   phone_number Int
   customer_id Int @unique @id
   age Int
+  address String
 }
