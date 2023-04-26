@@ -12,16 +12,20 @@ datasource db {
 
 }
 model login{
-  customer_id Int @id @unique
+  customer_id String  @id @default(uuid()) @db.Uuid
   customer_email String @unique  @db.VarChar(40)
   password String  @db.VarChar(15)
+  Customer Customer[]
+  
+  
   
 }
-model Customers{
+model Customer{
   name String @db.VarChar(30)
   email_id String @unique  @db.VarChar(40)
   phone_number Int
-  customer_id Int @id @unique
+  customer login @relation(fields: [customer_id], references: [customer_id])
+  customer_id String @db.Uuid
   age Int
   address String  @db.VarChar(40)
   
