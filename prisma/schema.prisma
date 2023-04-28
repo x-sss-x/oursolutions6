@@ -12,11 +12,11 @@ datasource db {
 
 model Customer {
   customer_id    String @id @default(uuid()) @db.Uuid
-  customer_email String @unique @db.VarChar(40)
+  customer_email String @unique 
   password       String @db.VarChar(15)
   age            Int
   address        String @db.VarChar(40)
-  phone_number   Int
+  phone_number   BigInt
   customer_name String @unique
   searchhistory         history[]
   review                review[]
@@ -25,12 +25,12 @@ model Customer {
 
 model Serviceprovider {
   serviceprovider_id              String                   @id @default(uuid()) @db.Uuid
-  serviceprovider_email           String                   @unique @db.VarChar(40)
-  password                        String                   @db.VarChar(15)
+  serviceprovider_email           String                   @unique 
+  password                        String                  
   age                             Int
-  address                         String                   @db.VarChar(40)
+  address                         String                 
   phone_number                    Int
-  gstregistration_number          String                   @unique @db.VarChar(40)
+  gstregistration_number          String                   @unique
   chargers_for_particular_service Int
   specialisation                  String
   service_id                      String                   @unique
