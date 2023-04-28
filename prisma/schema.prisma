@@ -20,6 +20,7 @@ model Customer {
   customer_name String @unique
   searchhistory         history[]
   review                review[]
+  request request[]
 }
 
 model Serviceprovider {
@@ -36,6 +37,8 @@ model Serviceprovider {
   searchhistory                   history[]
   service                         service[]
   bookingserviceprovider          bookingserviceprovider[]
+  viewingfeedbacks viewingfeedbacks[]
+  request request[]
 }
 
 model service {
@@ -46,6 +49,7 @@ model service {
   searchhistory         history[]
   bookingserviceprovider bookingserviceprovider[]
   review                 review[]
+  request request[]
  
 }
 
@@ -80,5 +84,26 @@ model review {
   review_content String
 }
 
+ model viewingfeedbacks{
+  review_id Int @id @unique
+  date DateTime
+  customer_id String @unique
+serviceprovider           Serviceprovider @relation(fields: [serviceprovider_id], references: [serviceprovider_id])
+  serviceprovider_id String          @unique @db.Uuid
+
+}
+model request{
+  
+  booking_id Int @id @unique
+  reasons_for_rejecting String
+  date DateTime
+  time DateTime
+serviceprovider           Serviceprovider @relation(fields: [serviceprovider_id], references: [serviceprovider_id])
+  serviceprovider_id String          @unique @db.Uuid
+customer       Customer @relation(fields: [customer_id], references: [customer_id])
+  customer_id    String   @unique @db.Uuid
+  service         service         @relation(fields: [service_id], references: [service_id])
+  service_id         String          @unique @db.Uuid
+}
 
 
