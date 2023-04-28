@@ -53,6 +53,25 @@ const getCustomer = (): Prisma.CustomerCreateInput[] => [
 
 
     },
+    const getServiceProvider = (): Prisma.ServiceproviderCreateInput[] => [
+        {
+            serviceprovider_email:"varshitha@gmail.com",
+            password:"varshi",
+            age:23,
+            address:"Housing board,Hassan,Karnataka",
+            phone_number:9876543217,
+            serviceprovider_name:"Varshithadas",
+            
+    
+        },
+
+
+
+
+
+
+
+
 ]
    const main =()=>{
     return Promise.all(getCustomer().map((CustomerInput)=>client.customer.create({
