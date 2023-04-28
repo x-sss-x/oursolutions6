@@ -52,19 +52,21 @@ const getCustomer = (): Prisma.CustomerCreateInput[] => [
         customer_name:"vinod",
 
 
-    },
-    const getServiceProvider = (): Prisma.ServiceproviderCreateInput[] => [
+    },]
+   
+    const gethistory = (): Prisma.historyCreateInput[] => [
         {
-            serviceprovider_email:"varshitha@gmail.com",
-            password:"varshi",
-            age:23,
-            address:"Housing board,Hassan,Karnataka",
-            phone_number:9876543217,
-            serviceprovider_name:"Varshithadas",
+            date:"11-11-22",
+            
+            
+            
+            
+           
             
     
-        },
-
+        },  ]
+    
+     
 
 
 

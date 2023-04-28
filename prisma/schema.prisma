@@ -58,7 +58,7 @@ model service {
 
 model history {
   date               DateTime
-  searchhistory      Customer        @relation(fields: [customer_id], references: [customer_id])
+  customer     Customer        @relation(fields: [customer_id], references: [customer_id])
   customer_id        String          @unique @db.Uuid
   search             Serviceprovider @relation(fields: [serviceprovider_id], references: [serviceprovider_id])
   serviceprovider_id String          @unique @db.Uuid
