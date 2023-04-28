@@ -29,7 +29,7 @@ model Serviceprovider {
   password                        String                  
   age                             Int
   address                         String                 
-  phone_number                    Int
+  phone_number                   BigInt
   gstregistration_number          String                   @unique
   chargers_for_particular_service Int
   specialisation                  String
