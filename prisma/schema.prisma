@@ -17,10 +17,8 @@ model Customer {
   age            Int
   address        String @db.VarChar(40)
   phone_number   Int
-
- 
-  searchhistory         searchhistory[]
- 
+  customer_name String @unique
+  searchhistory         history[]
   review                review[]
 }
 
@@ -35,7 +33,7 @@ model Serviceprovider {
   chargers_for_particular_service Int
   specialisation                  String
   service_id                      String                   @unique
-  searchhistory                   searchhistory[]
+  searchhistory                   history[]
   service                         service[]
   bookingserviceprovider          bookingserviceprovider[]
 }
@@ -45,7 +43,7 @@ model service {
   service_id             String                   @id @default(uuid()) @db.Uuid
   service                Serviceprovider          @relation(fields: [serviceprovider_id], references: [serviceprovider_id])
   serviceprovider_id     String                   @unique @db.Uuid
-  searchhistory          searchhistory[]
+  searchhistory         history[]
   bookingserviceprovider bookingserviceprovider[]
   review                 review[]
  
@@ -53,7 +51,7 @@ model service {
 
 
 
-model searchhistory {
+model history {
   date               DateTime
   searchhistory      Customer        @relation(fields: [customer_id], references: [customer_id])
   customer_id        String          @unique @db.Uuid
@@ -81,4 +79,6 @@ model review {
   rating         Float
   review_content String
 }
+
+
 
