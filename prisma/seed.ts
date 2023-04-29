@@ -53,19 +53,7 @@ const getCustomer = (): Prisma.CustomerCreateInput[] => [
 
 
     },]
-    const getServiceprovider = (): Prisma.ServiceproviderCreateInput[] => [
-        {
-            serviceprovider_email: "varsha@gmail.com",
-            password: "dasdnthejas",
-            age: 23,
-            address: "Housing board,Hassan,Karnataka",
-            phone_number: 9876543217,
-            gstregistration_number:"vagayu26",
-            specialisation:"Bike ride",
-            
-            chargers_for_particular_service:8764
-
-        },]
+    
 
    
 
@@ -75,9 +63,7 @@ const main = async() => {
     const Customer=await client.customer.createMany({
         data:getCustomer()
     })
-    const Serviceprovider=await client.serviceprovider.createMany({
-        data:getServiceprovider()
-    })
+    
    
 };
 

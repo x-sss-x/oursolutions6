@@ -17,7 +17,7 @@ model Customer {
   age            Int
   address        String @db.VarChar(40)
   phone_number   BigInt
-  customer_name String @unique
+  customer_name String 
   searchhistory         history[]
   review                review[]
   request request[]
