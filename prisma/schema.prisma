@@ -12,12 +12,12 @@ datasource db {
 
 model Customer {
   customer_id    String @id @default(uuid()) @db.Uuid
-  customer_email String 
+  customer_email String @unique
   password       String @db.VarChar(15)
   age            Int
   address        String @db.VarChar(40)
   phone_number   BigInt
-  customer_name String 
+  customer_name String @unique
   searchhistory         history[]
   review                review[]
   request request[]
