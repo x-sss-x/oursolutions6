@@ -35,6 +35,7 @@ model Serviceprovider {
   chargers_for_particular_service Int
   specialisation                  String
  serviceprovider_name String
+ service_name String
   searchhistory                   history[]
   service                         service[]
   
