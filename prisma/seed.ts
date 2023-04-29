@@ -1,146 +1,75 @@
-import { Prisma, PrismaClient } from "@prisma/client"
+import { PrismaClient } from '@prisma/client';
 
-const client = new PrismaClient();
+const prisma = new PrismaClient();
 
-const getCustomer = (): Prisma.CustomerCreateInput[] => [
-    {
-        customer_email: "varshitha@gmail.com",
-        password: "varshi",
-        age: 23,
-        address: "Housing board,Hassan,Karnataka",
-        phone_number: 9876543217,
-        customer_name: "Varshithadas",
-
-
+async function main() {
+  const customer = await prisma.customer.create({
+    data: {
+      customer_name: "varshitha",
+      customer_email: 'varshitha@gmail.com',
+      phone_number: 9876543219,
+      address: 'Mysore',
+      password: 'varshichinni*',
+      age: 23,
     },
-    {
-        customer_email: "thejas@gmail.com",
-        password: "thejas",
-        age: 21,
-        address: "BangaloreKarnataka",
-        phone_number: 9217876543,
-        customer_name: "Thejasdas",
+  });
 
-
+  const serviceProvider = await prisma.serviceprovider.create({
+    data: {
+      serviceprovider_name: 'Eva ovan',
+      serviceprovider_email: 'evaovan@gmail.com',
+      phone_number: 9876543278,
+      gstregistration_number: 'GST87654',
+      chargers_for_particular_service: 900,
+      specialisation: 'Cleaning',
+      service_name: 'HomeCleaning',
+      age: 35,
+      address: 'Mysore',
+      password: 'evaovan1234',
     },
-    {
-        customer_email: "nasir89@gmail.com",
-        password: "nasir",
-        age: 19,
-        address: "Mangalore,Karnataka",
-        phone_number: 8765432198,
-        customer_name: "Nasir",
+  });
 
-
+  const service = await prisma.service.create({
+    data: {
+      service_name: 'Home Cleaning',
+      serviceprovider_id: serviceProvider.serviceprovider_id,
     },
-    {
-        customer_email: "amulya87@gmail.com",
-        password: "amulya",
-        age: 28,
-        address: "Hassan,Karnataka",
-        phone_number: 9182736459,
-        customer_name: "Amulya",
+  });
 
-
+  const history = await prisma.history.create({
+    data: {
+      date: new Date(),
+      customer_id: customer.customer_id,
+      serviceprovider_id: serviceProvider.serviceprovider_id,
+      service_id: service.service_id,
     },
-    {
-        customer_email: "vinod65@gmail.com",
-        password: "vinod",
-        age: 26,
-        address: "CRP,Karnataka",
-        phone_number: 9876543218,
-        customer_name: "vinod",
+  });
 
-
-    },]
-const getServiceprovider = (): Prisma.ServiceproviderCreateInput[] => [
-    {
-        service_name: "Bike ride",
-        serviceprovider_name: "Arlo",
-        gstregistration_number: "vsghha8",
-        chargers_for_particular_service: 8765,
-        serviceprovider_email: "arlojd5n@gmail.com",
-        age: 98,
-        password: "arlojd5n",
-        address: "Bangalore",
-        phone_number: 9876543212,
-        specialisation: "HR"
+  const review = await prisma.review.create({
+    data: {
+      customer_id: customer.customer_id,
+      service_id: service.service_id,
+      rating: 4.5,
+      review_content: 'Great Home cleaning service!',
     },
+  });
 
-{
-        service_name: "Taxi ride",
-        serviceprovider_name: "Eva Olsen",
-        gstregistration_number: "jhgs46528",
-        chargers_for_particular_service: 765,
-        serviceprovider_email: "evaolsen12@gmail.com",
-        age: 98,
-        password: "abcedftyu",
-        address: "Mysuru",
-        phone_number: 8176549876,
-        specialisation: "HR"
+  const request = await prisma.request.create({
+    data: {
+      reasons_for_rejecting: "service not available on that date",
+      date: new Date(),
+      time: new Date(),
+      serviceprovider_id: serviceProvider.serviceprovider_id,
+      customer_id: customer.customer_id,
+      service_id: service.service_id,
     },
-    {
-        service_name: "Bike ride",
-        serviceprovider_name: "joy",
-        gstregistration_number: "vsghha8",
-        chargers_for_particular_service: 8765,
-        serviceprovider_email: "vahahajj@gmail.com",
-        age: 32,
-        password: "agahajaj",
-        address: "Bangalore",
-        phone_number: 9876543212,
-        specialisation: "HR"
-    },
-    {
-        service_name: "Home cleaning",
-        serviceprovider_name: "Camilla",
-        gstregistration_number: "kjha25gds",
-        chargers_for_particular_service: 8765,
-        serviceprovider_email: "camilla@gmail.com",
-        age: 29,
-        password: "agahajaj",
-        address: "Mumbai",
-        phone_number: 8745346786,
-        specialisation: "HR"
-    },
-    {
-        service_name: "courier service",
-        serviceprovider_name: "jose",
-        gstregistration_number: "jhdayyi8",
-        chargers_for_particular_service: 985,
-        serviceprovider_email: "jose7@gmail.com",
-        age: 22,
-        password: "Jose1234",
-        address: "Bangalore",
-        phone_number: 8765432189,
-        specialisation: "HR"
-    },
+  });
 
+  console.log('One record seeded for each model!');
+}
 
-
-]
-
-
-
-
-
-
-const main = async () => {
-    const Customer = await client.customer.createMany({
-        data: getCustomer()
-    })
-    const Serviceprovider = await client.serviceprovider.createMany({
-        data: getServiceprovider()
-    })
-
-
-
-
-};
-
-
-main().then(() => {
-    console.log("Successfully Seeded")
-}).catch((e) => {
-    console.log(e);
-})
+main()
+  .catch((e) => console.error(e))
+  .finally(async () => {
+    await prisma.$disconnect();
+  });

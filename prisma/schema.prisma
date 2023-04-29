@@ -12,7 +12,7 @@ datasource db {
 
 model Customer {
   customer_id    Int       @id @default(autoincrement())
-  customer_email String   
+  customer_email String  
   password       String
   age            Int
   address        String
@@ -25,7 +25,7 @@ model Customer {
 
 model Serviceprovider {
   serviceprovider_id              Int       @id @default(autoincrement())
-  serviceprovider_email           String    
+  serviceprovider_email           String   
   password                        String
   age                             Int
   address                         String
