@@ -11,21 +11,22 @@ datasource db {
 }
 
 model Customer {
-  customer_id    String @id @default(uuid()) @db.Uuid
+  customer_id    Int @id @default(autoincrement())
   customer_email String @unique
-  password       String @db.VarChar(15)
+  password       String
   age            Int
-  address        String @db.VarChar(40)
-  phone_number   BigInt
+  address        String 
+  phone_number   BigInt @db.BigInt
   customer_name String @unique
   searchhistory         history[]
   review                review[]
   request request[]
+  
 }
 
 model Serviceprovider {
-  serviceprovider_id              String                   @id @default(uuid()) @db.Uuid
-  serviceprovider_email           String                  
+  serviceprovider_id              Int @id @default(autoincrement())
+  serviceprovider_email           String     @unique             
   password                        String                  
   age                             Int
   address                         String                 
@@ -33,21 +34,20 @@ model Serviceprovider {
   gstregistration_number          String                  
   chargers_for_particular_service Int
   specialisation                  String
- 
+ serviceprovider_name String
   searchhistory                   history[]
   service                         service[]
   
-  viewingfeedbacks viewingfeedbacks[]
+ 
   request request[]
 }
 
 model service {
   service_name           String
-  service_id             String                   @id @default(uuid()) @db.Uuid
+  service_id             Int @id @default(autoincrement())            
   service                Serviceprovider          @relation(fields: [serviceprovider_id], references: [serviceprovider_id])
-  serviceprovider_id     String                   @unique @db.Uuid
-  searchhistory         history[]
-  
+  serviceprovider_id     Int             
+  history  history []
   review                 review[]
   request request[]
   
@@ -59,44 +59,38 @@ model service {
 model history {
   date               DateTime
   customer     Customer        @relation(fields: [customer_id], references: [customer_id])
-  customer_id        String          @unique @db.Uuid
+  customer_id       Int         @unique 
   search             Serviceprovider @relation(fields: [serviceprovider_id], references: [serviceprovider_id])
-  serviceprovider_id String          @unique @db.Uuid
+  serviceprovider_id Int          
   searching          service         @relation(fields: [service_id], references: [service_id])
-  service_id         String          @unique @db.Uuid
+  service_id     Int         @unique
 }
 
 
 model review {
   customer       Customer @relation(fields: [customer_id], references: [customer_id])
-  customer_id    String   @unique @db.Uuid
-  review_id      String   @id @default(uuid()) @db.Uuid
+  customer_id   Int @unique
+  review_id        Int @id @default(autoincrement())
   service        service  @relation(fields: [service_id], references: [service_id])
-  service_id     String   @unique @db.Uuid
+  service_id    Int   @unique 
   rating         Float
   review_content String
 }
 
- model viewingfeedbacks{
-  review_id Int @id @unique
-  date DateTime
-  customer_id String @unique
-serviceprovider           Serviceprovider @relation(fields: [serviceprovider_id], references: [serviceprovider_id])
-  serviceprovider_id String          @unique @db.Uuid
+ 
 
-}
 model request{
   
-  booking_id Int @id @unique
+  booking_id       Int @id @default(autoincrement())
   reasons_for_rejecting String
   date DateTime
   time DateTime
 serviceprovider           Serviceprovider @relation(fields: [serviceprovider_id], references: [serviceprovider_id])
-  serviceprovider_id String          @unique @db.Uuid
+  serviceprovider_id Int        @unique 
 customer       Customer @relation(fields: [customer_id], references: [customer_id])
-  customer_id    String   @unique @db.Uuid
+  customer_id   Int  @unique 
   service         service         @relation(fields: [service_id], references: [service_id])
-  service_id         String          @unique @db.Uuid
+  service_id       Int         @unique 
 }
 
 
