@@ -33,8 +33,7 @@ model Serviceprovider {
   gstregistration_number          String                   @unique
   chargers_for_particular_service Int
   specialisation                  String
-  service_id                      String                   @unique
-  
+ 
   searchhistory                   history[]
   service                         service[]
   bookingserviceprovider          bookingserviceprovider[]

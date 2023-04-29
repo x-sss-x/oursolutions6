@@ -53,67 +53,34 @@ const getCustomer = (): Prisma.CustomerCreateInput[] => [
 
 
     },]
-
     const getServiceprovider = (): Prisma.ServiceproviderCreateInput[] => [
         {
-            serviceprovider_email: "santhosh@gmail.com",
-            password: "santhosh",
-            age: 20,
-            address: "BangaloreKarnataka",
+            serviceprovider_email: "varsha@gmail.com",
+            password: "dasdnthejas",
+            age: 23,
+            address: "Housing board,Hassan,Karnataka",
             phone_number: 9876543217,
-           gstregistration_number:"vhf56j",
-           chargers_for_particular_service:8765,
-           specialisation:"Bike ridd",
-           service_id:"santhosh_98",
-          
+            gstregistration_number:"vagayu26",
+            specialisation:"Bike ride",
+            
+            chargers_for_particular_service:8764
 
-    
-    
-        },
-        {
-            serviceprovider_email:"sagar@gmail.com",
-            password: "sagar",
-            age: 21,
-            address: "KR puram,Karnataka",
-            phone_number: 9876543217,
-           gstregistration_number:"vhf56j",
-           chargers_for_particular_service:8765,
-           specialisation:"Taxi ride",
-           service_id:"sagar_88",
-           
+        },]
 
-    
-    
-        },
-    ]
+   
 
 
 
+const main = async() => {
+    const Customer=await client.customer.createMany({
+        data:getCustomer()
+    })
+    const Serviceprovider=await client.serviceprovider.createMany({
+        data:getServiceprovider()
+    })
+   
+};
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-const main = () => {
-    return Promise.all(getCustomer().map((CustomerInput) => client.customer.create({
-        data: CustomerInput
-    })))
-}
-const serviceprovider = () => {
-    return Promise.all(getServiceprovider().map((ServiceproviderInput) => client.serviceprovider.create({
-        data: ServiceproviderInput
-    })))
-}
 
 main().then(() => {
     console.log("Successfully Seeded")
