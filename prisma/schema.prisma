@@ -25,12 +25,12 @@ model Customer {
 
 model Serviceprovider {
   serviceprovider_id              String                   @id @default(uuid()) @db.Uuid
-  serviceprovider_email           String                   @unique 
+  serviceprovider_email           String                  
   password                        String                  
   age                             Int
   address                         String                 
   phone_number                   BigInt
-  gstregistration_number          String                   @unique
+  gstregistration_number          String                  
   chargers_for_particular_service Int
   specialisation                  String
  
