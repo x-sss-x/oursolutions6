@@ -79,7 +79,46 @@ const getServiceprovider = (): Prisma.ServiceproviderCreateInput[] => [
 
 
     },
+    {
+        serviceprovider_email: "Harshi@gmail.com",
+        password: "Harshi",
+        age: 21,
+        address: "Bangalore,Karnataka",
+        phone_number: 9876548765,
+        gstregistration_number: "kjhf67",
+        specialisation: "Home cleaning ",
+        chargers_for_particular_service: 9876,
+
+
+
+    },
+    {
+        serviceprovider_email: "hema@gmail.com",
+        password: "hema",
+        age: 22,
+        address: "Mysore,Karnataka",
+        phone_number: 8796549017,
+        gstregistration_number: "jhgfds56",
+        specialisation: "Home cleaning",
+        chargers_for_particular_service: 1087,
+
+
+
+    },
+
+
+
+    
 ]
+const getservice=(): Prisma.serviceCreateInput[] => [
+    service_name:"varshi",
+    s
+
+
+
+]
+
+
 
 
 

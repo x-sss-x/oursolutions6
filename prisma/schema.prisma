@@ -36,7 +36,7 @@ model Serviceprovider {
  
   searchhistory                   history[]
   service                         service[]
-  bookingserviceprovider          bookingserviceprovider[]
+  
   viewingfeedbacks viewingfeedbacks[]
   request request[]
 }
@@ -47,9 +47,10 @@ model service {
   service                Serviceprovider          @relation(fields: [serviceprovider_id], references: [serviceprovider_id])
   serviceprovider_id     String                   @unique @db.Uuid
   searchhistory         history[]
-  bookingserviceprovider bookingserviceprovider[]
+  
   review                 review[]
   request request[]
+  
  
 }
 
@@ -65,14 +66,6 @@ model history {
   service_id         String          @unique @db.Uuid
 }
 
-model bookingserviceprovider {
-  book               Serviceprovider @relation(fields: [serviceprovider_id], references: [serviceprovider_id])
-  serviceprovider_id String          @unique @db.Uuid
-  booking_id         String
-  booking            service         @relation(fields: [service_id], references: [service_id])
-  service_id         String          @unique @db.Uuid
-  date               DateTime
-}
 
 model review {
   customer       Customer @relation(fields: [customer_id], references: [customer_id])
