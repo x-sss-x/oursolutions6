@@ -20,6 +20,7 @@ model Customer {
   age Int
   address String
   phone_number BigInt @db.BigInt
+  profile_picture String
   customer_name String    
   searchhistory history[]
   review review[]
@@ -33,6 +34,7 @@ model Serviceprovider {
   age Int
   address String
   phone_number BigInt
+  profile_picture String
   gstregistration_number String
   chargers_for_particular_service Int
   specialisation String

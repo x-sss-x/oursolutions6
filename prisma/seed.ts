@@ -19,6 +19,7 @@ async function main() {
         phone_number: BigInt(faker.phone.number('+91#########')),
         address: faker.address.streetAddress(),
         password: faker.internet.password(),
+        profile_picture: faker.image.image() ,
         age: faker.datatype.number({ min: 18, max: 80 }),
       },
     });
@@ -27,12 +28,13 @@ async function main() {
       data: {
         serviceprovider_name: faker.company.companyName(),
         serviceprovider_email: faker.internet.email(),
-        phone_number: BigInt(faker.phone.number('91#########')),
+        phone_number:BigInt(faker.phone.number('91#########')),
         gstregistration_number: faker.random.alphaNumeric(8),
         chargers_for_particular_service: faker.datatype.number({ min: 50, max: 500 }),
         specialisation: faker.lorem.word(),
         service_name: faker.lorem.word(),
         age: faker.datatype.number({ min: 18, max: 80 }),
+        profile_picture: faker.image.image(),
         address: faker.address.streetAddress(),
         password: faker.internet.password(),
       },
