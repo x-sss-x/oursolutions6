@@ -5,12 +5,12 @@ const prisma = new PrismaClient();
 async function main() {
   const customer = await prisma.customer.create({
     data: {
-      customer_name: "nasir",
-      customer_email: 'nasir123@gmail.com',
-      phone_number: 9876543897,
-      address: 'Bangalore,Karnataka',
-      password: 'nasirhussain',
-      age: 29,
+      customer_name: "Amulya",
+      customer_email: 'amulya098@gmail.com',
+      phone_number: 9123456787,
+      address: 'KR puram,Karnataka',
+      password: 'amulyasa098',
+      age: 19,
     },
   });
 

@@ -5,81 +5,84 @@ generator client {
   provider = "prisma-client-js"
 }
 
+
 datasource db {
   provider = "postgresql"
   url      = env("DATABASE_URL")
 }
 
+
+
 model Customer {
-  customer_id    Int       @id @default(autoincrement())
+  customer_id String   @id @default(uuid())
   customer_email String  
-  password       String
-  age            Int
-  address        String
-  phone_number   BigInt    @db.BigInt
-  customer_name  String    
-  searchhistory  history[]
-  review         review[]
-  request        request[]
+  password String
+  age Int
+  address String
+  phone_number BigInt @db.BigInt
+  customer_name String    
+  searchhistory history[]
+  review review[]
+  request request[]
 }
 
 model Serviceprovider {
-  serviceprovider_id              Int       @id @default(autoincrement())
-  serviceprovider_email           String   
-  password                        String
-  age                             Int
-  address                         String
-  phone_number                    BigInt
-  gstregistration_number          String
+  serviceprovider_id String   @id @default(uuid())
+  serviceprovider_email String   
+  password String
+  age Int
+  address String
+  phone_number BigInt
+  gstregistration_number String
   chargers_for_particular_service Int
-  specialisation                  String
-  serviceprovider_name            String
-  service_name                    String
-  searchhistory                   history[]
-  service                         service[]
+  specialisation String
+  serviceprovider_name String
+  service_name String
+  searchhistory history[]
+  service service[]
 
   request request[]
 }
 
 model service {
-  service_name       String
-  service_id         Int             @id @default(autoincrement())
-  service            Serviceprovider @relation(fields: [serviceprovider_id], references: [serviceprovider_id])
-  serviceprovider_id Int
-  history            history[]
-  review             review[]
-  request            request[]
+  service_name String
+  service_id String @id @default(uuid())
+  service Serviceprovider @relation(fields: [serviceprovider_id], references: [serviceprovider_id])
+  serviceprovider_id String
+  history history[]
+  review review[]
+  request request[]
 }
 
 model history {
-  date               DateTime
-  customer           Customer        @relation(fields: [customer_id], references: [customer_id])
-  customer_id        Int             @unique
-  search             Serviceprovider @relation(fields: [serviceprovider_id], references: [serviceprovider_id])
-  serviceprovider_id Int
-  searching          service         @relation(fields: [service_id], references: [service_id])
-  service_id         Int             @unique
+  date DateTime
+  customer Customer @relation(fields: [customer_id], references: [customer_id])
+  customer_id String
+  search Serviceprovider @relation(fields: [serviceprovider_id], references: [serviceprovider_id])
+  serviceprovider_id String
+  searching service @relation(fields: [service_id], references: [service_id])
+  service_id String @unique
 }
 
 model review {
-  customer       Customer @relation(fields: [customer_id], references: [customer_id])
-  customer_id    Int      @unique
-  review_id      Int      @id @default(autoincrement())
-  service        service  @relation(fields: [service_id], references: [service_id])
-  service_id     Int      @unique
-  rating         Float
+  customer Customer @relation(fields: [customer_id], references: [customer_id])
+  customer_id String 
+  review_id String @id @default(uuid())
+  service service @relation(fields: [service_id], references: [service_id])
+  service_id String 
+  rating Float
   review_content String
 }
 
 model request {
-  booking_id            Int             @id @default(autoincrement())
+  booking_id String  @id @default(uuid())
   reasons_for_rejecting String
-  date                  DateTime
-  time                  DateTime
-  serviceprovider       Serviceprovider @relation(fields: [serviceprovider_id], references: [serviceprovider_id])
-  serviceprovider_id    Int             @unique
-  customer              Customer        @relation(fields: [customer_id], references: [customer_id])
-  customer_id           Int             @unique
-  service               service         @relation(fields: [service_id], references: [service_id])
-  service_id            Int             @unique
+  date DateTime
+  time DateTime
+  serviceprovider Serviceprovider @relation(fields: [serviceprovider_id], references: [serviceprovider_id])
+  serviceprovider_id String
+  customer Customer @relation(fields: [customer_id], references: [customer_id])
+  customer_id String
+  service service @relation(fields: [service_id], references: [service_id])
+  service_id String
 }
