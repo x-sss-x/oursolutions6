@@ -5,33 +5,33 @@ const prisma = new PrismaClient();
 async function main() {
   const customer = await prisma.customer.create({
     data: {
-      customer_name: "varshitha",
-      customer_email: 'varshitha@gmail.com',
-      phone_number: 9876543219,
-      address: 'Mysore',
-      password: 'varshichinni*',
-      age: 23,
+      customer_name: "nasir",
+      customer_email: 'nasir123@gmail.com',
+      phone_number: 9876543897,
+      address: 'Bangalore,Karnataka',
+      password: 'nasirhussain',
+      age: 29,
     },
   });
 
   const serviceProvider = await prisma.serviceprovider.create({
     data: {
-      serviceprovider_name: 'Eva ovan',
-      serviceprovider_email: 'evaovan@gmail.com',
-      phone_number: 9876543278,
-      gstregistration_number: 'GST87654',
-      chargers_for_particular_service: 900,
-      specialisation: 'Cleaning',
-      service_name: 'HomeCleaning',
-      age: 35,
-      address: 'Mysore',
+      serviceprovider_name: 'Arlo',
+      serviceprovider_email: 'alro123@gmail.com',
+      phone_number: 8765432198,
+      gstregistration_number: 'GST878765',
+      chargers_for_particular_service: 890,
+      specialisation: 'Deliverying food',
+      service_name: 'Food delivery',
+      age: 29,
+      address: 'Bngalore',
       password: 'evaovan1234',
     },
   });
 
   const service = await prisma.service.create({
     data: {
-      service_name: 'Home Cleaning',
+      service_name: 'Food delivery',
       serviceprovider_id: serviceProvider.serviceprovider_id,
     },
   });
@@ -50,7 +50,7 @@ async function main() {
       customer_id: customer.customer_id,
       service_id: service.service_id,
       rating: 4.5,
-      review_content: 'Great Home cleaning service!',
+      review_content: 'Very tasty food !',
     },
   });
 
