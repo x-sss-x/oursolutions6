@@ -11,8 +11,8 @@ jobs:
     runs-on: ubuntu-latest
 
     env:
-      SUPABASE_ACCESS_TOKEN: sbp_14a856810e954c52b79897036c21de3a6b1fa8e7
-      SUPABASE_DB_PASSWORD: 7HWtNPDWJYSmuYX7
+      SUPABASE_ACCESS_TOKEN: ${{ secrets.SUPABASE_ACCESS_TOKEN }}
+      SUPABASE_DB_PASSWORD: ${{ secrets.PRODUCTION_DB_PASSWORD }}
       PROJECT_ID: jgcajpecsmkatlbzsstn
 
     steps:
