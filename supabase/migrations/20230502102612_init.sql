@@ -4,7 +4,7 @@ create table "public"."Customer" (
     "password" text not null,
     "age" integer not null,
     "address" text not null,
-    "phone_number" bigint not null,
+    "phone_number" bigint not null, 
     "profile_picture" text not null,
     "customer_name" text not null
 );
