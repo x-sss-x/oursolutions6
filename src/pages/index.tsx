@@ -1,4 +1,5 @@
 import Image from 'next/image'
+
 import { Inter } from 'next/font/google'
 
 const inter = Inter({ subsets: ['latin'] })
@@ -8,9 +9,9 @@ export default function Home() {
     <main
       className={`flex min-h-screen flex-col items-center justify-between p-24 ${inter.className}`}
     >
-    <ul></ul><h1 className='text-xl font-bold font-sans'>OurSolutions<br/>
+   <h1 className='text-xl font-bold font-sans'>OurSolutions
     (multiservices)
-    </h1><ul/>
+    </h1>
     </main>
   )
 }
