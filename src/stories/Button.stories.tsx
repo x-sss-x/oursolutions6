@@ -6,12 +6,48 @@ const meta: Meta<typeof Button> = {
   component: Button,
 };
 
-//exporting meta of button story
 export default meta;
 
 type Story = StoryObj<typeof Button>;
 
-//exporting primary varient of button
 export const Primary: Story = {
+  args: {
+    intent: 'primary',
+    fullwidth: true,
+    children: 'Primary Label',
+  },
+  argTypes: {
+    fullwidth: {
+      type: 'boolean',
+      defaultValue: false,
+    },
+  },
+};
 
-}
+export const Green: Story = {
+  args: {
+    intent: 'green',
+    fullwidth: true,
+    children: 'Green Label',
+  },
+  argTypes: {
+    fullwidth: {
+      type: 'boolean',
+      defaultValue: false,
+    },
+  },
+};
+
+export const Red: Story = {
+  args: {
+    intent: 'red',
+    fullwidth: true,
+    children: 'Red Label',
+  },
+  argTypes: {
+    fullwidth: {
+      type: 'boolean',
+      defaultValue: false,
+    },
+  },
+};
