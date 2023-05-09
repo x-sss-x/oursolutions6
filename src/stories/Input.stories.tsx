@@ -67,5 +67,5 @@ export const PhoneNumber: Story = {
       placeholder: "********",
       inputVariant: "password",
   },
-  
+
   };
