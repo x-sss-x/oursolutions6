@@ -2,7 +2,7 @@ import type { Meta, StoryObj } from '@storybook/react';
 import Input, { InputProps } from '../components/Input';
 
 const meta: Meta<typeof Input> = {
-  title: 'examples/Input',
+  title: 'Components/Input',
   component: Input,
 };
 
@@ -67,5 +67,4 @@ export const PhoneNumber: Story = {
       placeholder: "********",
       inputVariant: "password",
   },
-  
   };
