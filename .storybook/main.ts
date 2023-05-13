@@ -6,8 +6,8 @@ const config: StorybookConfig = {
     "@storybook/addon-essentials",
     "@storybook/addon-interactions",
     {
-      name:'@storybook/addon-styling',
-      options: {
+      name:"@storybook/addon-styling",
+      options:{
         postCss: true,
       },
     }
@@ -21,4 +21,3 @@ const config: StorybookConfig = {
   },
 };
 export default config;
-
