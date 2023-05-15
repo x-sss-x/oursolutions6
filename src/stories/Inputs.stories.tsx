@@ -1,8 +1,8 @@
 import type { Meta, StoryObj } from '@storybook/react';
-import Input, { InputProps } from '../components/Input';
+import Input, { InputsProps } from '../components/Inputs';
 
 const meta: Meta<typeof Input> = {
-  title: 'Components/Input',
+  title: 'Components/Inputs',
   component: Input,
 };
 
@@ -12,21 +12,21 @@ type Story = StoryObj<typeof Input>;
 
 export const Default: Story = {
   args: {
-    placeholder: "Default Input",
+    placeholder: "Default Inputs",
   },
 };
 
 export const Email: Story = {
   args: {
     placeholder: "Email",
-    inputVariant: "email",
+    inputsVariant: "email",
   },
 };
 
 export const Username: Story = {
   args: {
     placeholder: "Username",
-    inputVariant: "username",
+    inputsVariant: "username",
   },
 };
 
@@ -35,14 +35,14 @@ export const Username: Story = {
 export const PhoneNumber: Story = {
     args: {
       placeholder: "Phone Number",
-      inputVariant: "phoneNumber",
+      inputsVariant: "phoneNumber",
   },
   };
 
-  export const Age: Story = {
+  export const IDproof: Story = {
     args: {
-      placeholder: "Age",
-      inputVariant: "age",
+      placeholder: "IDproof",
+      inputsVariant: "idproof",
   },
   };
 
@@ -50,7 +50,13 @@ export const PhoneNumber: Story = {
   export const Address: Story = {
     args: {
       placeholder: "Address",
-      inputVariant: "address",
+      inputsVariant: "address",
+  },
+  };
+  export const Specialisation: Story = {
+    args: {
+      placeholder: "Specialisation",
+     inputsVariant: "specialisation",
   },
   };
 
@@ -58,13 +64,13 @@ export const PhoneNumber: Story = {
   export const Password: Story = {
     args: {
       placeholder: "********",
-      inputVariant: "password",
+      inputsVariant: "password",
   },
   };
 
   export const ConfirmPassword: Story = {
     args: {
       placeholder: "********",
-      inputVariant: "password",
+      inputsVariant: "password",
   },
   };

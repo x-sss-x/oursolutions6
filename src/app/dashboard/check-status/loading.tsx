@@ -1,4 +1,4 @@
-export default function Page() {
-    return <h1 className="text-3xl font-bold">Dashboard / Check Status Page</h1>;
+export default function DashboardLoading() {
+    return <div className="h-full w-full bg-gray-800 animate-ping"></div>;
   }
   
