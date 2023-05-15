@@ -1,6 +1,10 @@
 {
   "/_app": "pages/_app.js",
   "/_error": "pages/_error.js",
+<<<<<<< HEAD
+  "/_document": "pages/_document.js"
+=======
   "/_document": "pages/_document.js",
   "/": "pages/index.js"
+>>>>>>> a03afda1c529333d9936741ac4142b7a921a2b28
 }
