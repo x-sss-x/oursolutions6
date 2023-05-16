@@ -2,7 +2,7 @@ import { action } from '@storybook/addon-actions'
 import CustomDropdown from '../components/dropdown'
 
 export default {
-    title: 'CustomDropdown',
+    title: 'components/CustomDropdown',
     component: CustomDropdown,
 }
 

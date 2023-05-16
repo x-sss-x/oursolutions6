@@ -1,47 +1,43 @@
-import React from 'react';
-import { useForm } from 'react-hook-form';
-import * as yup from 'yup';
-import { yupResolver } from '@hookform/resolvers/yup';
-import { Password } from '@/stories/Inputs.stories';
 
-type FormData = {
+import Input, { InputExtendedProps } from './Input';
+import Button, { ButtonExtendedProps } from './Button';
+
+interface ProfileProps {
   name: string;
   email: string;
-};
+  customerId: string;
+}
 
-const schema = yup.object().shape({
-  name: yup.string().required(),
-  email: yup.string().email().required(),
-});
+export default function Profile({ name, email, customerId }: ProfileProps) {
+  const nameInputProps: InputExtendedProps = {
+    placeholder: 'Name',
+    inputVariant: 'username',
+    value: name,
+  };
 
-type Props = {
-  name: string;
-  email: string;
-  onSubmit: (data: FormData) => void;
-};
+  const emailInputProps: InputExtendedProps = {
+    placeholder: 'Email',
+    inputVariant: 'email',
+    value: email,
+  };
 
-const ProfilePage: React.FC<Props> = ({ name, email, onSubmit }) => {
-  const { register, handleSubmit, formState } = useForm<FormData>({
-    resolver: yupResolver(schema),
-  });
+  const customerIdInputProps: InputExtendedProps = {
+    placeholder: 'Customer ID',
+    inputVariant: 'default',
+    value: customerId,
+  };
+
+  const buttonProps: ButtonExtendedProps = {
+    intent: 'primary',
+    fullwidth: true,
+  };
 
   return (
-    <form onSubmit={handleSubmit(onSubmit)}>
-      <label htmlFor="name">Customer_id<br/></label>
-      <input type="text" {...register('name')} defaultValue={name} /><br/>
-      {formState.errors.name && <span>{formState.errors.name.message}</span>}<br/>
-
-      <label htmlFor="email">Customer_email<br/></label>
-      <input type="email" {...register('email')} defaultValue={email} /><br/>
-      {formState.errors.email && <span>{formState.errors.email.message}</span>}<br/>
-      <label htmlFor="name">Password<br/></label>
-      <input type="text" {...register('name')} defaultValue={name} /><br/>
-      {formState.errors.name && <span>{formState.errors.name.message}</span>}<br/>
-
-    
-      <button type="submit">Login</button>
-    </form>
+    <div className="flex flex-col space-y-4">
+      <Input {...nameInputProps} />
+      <Input {...emailInputProps} />
+      <Input {...customerIdInputProps} />
+      <Button {...buttonProps}>Sign In</Button>
+    </div>
   );
-};
-
-export default ProfilePage;
+}

@@ -1,10 +1,10 @@
-import { VariantProps, cva } from "class-variance-authority";
+import { VariantProps, cva  } from "class-variance-authority";
 import { AiOutlineUser, AiOutlineMail, AiOutlinePhone, AiOutlineLock, AiOutlineArrowUp } from "react-icons/ai";
 import { HiOutlineLocationMarker } from "react-icons/hi";
 
 export type InputProps = VariantProps<typeof inputStyles>;
 
-export const inputStyles = cva("relative flex items-center", {
+export const inputStyles = cva("relative m-auto my-2", {
   variants: {
     inputVariant: {
       default: "bg-stone-200 border border-gray-300 rounded-lg px-4 py-2",

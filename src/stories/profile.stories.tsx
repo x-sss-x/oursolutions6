@@ -1,16 +1,16 @@
-import React from 'react';
-import ProfilePage from '../components/profile';
+import { Story } from '@storybook/react';
+import Profile from '../components/Profile';
+
 export default {
-  title: 'Profile Page',
-  component: ProfilePage,
+  title: 'Profile',
+  component: Profile,
 };
 
-const Template = (args) => <ProfilePage {...args} />;
+const Template: Story = (args) => <Profile {...args} />;
 
 export const Default = Template.bind({});
 Default.args = {
-  name: 'Varshitha',
+  name: 'varshitha',
   email: 'varshitha@example.com',
-  password:'*******',
-  onSubmit: (data) => console.log(data),
+  customerId: '1234567890',
 };
