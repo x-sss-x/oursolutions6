@@ -4,13 +4,13 @@ import { AiOutlineCheckCircle, AiOutlineCloseCircle, AiOutlineExclamationCircle 
 export type AlertProps = VariantProps<typeof AlertBoxStyle>;
 
 export const AlertBoxStyle = cva(
-  "flex items-center justify-center bg-white shadow-lg rounded-3xl py-2 w-fit px-3",
+  "flex items-center justify-center shadow-lg rounded-3xl py-2 w-fit px-3",
   {
     variants: {
       variant: {
-        success: "border-2 border-green-600 text-green-700",
-        error: "border-2 border-red-600 text-red-700",
-        warning: "border-2 border-secondary text-yellow-700",
+        success: "border-2 bg-green-600 border-green-600 text-black",
+        error: "border-2 bg-red-600 border-red-600 text-black",
+        warning: "border-2 bg-blue-600 border-blue-600 text-black",
       },
     },
     defaultVariants: {
