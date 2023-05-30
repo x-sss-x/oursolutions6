@@ -1,5 +1,5 @@
 import { VariantProps, cva } from "class-variance-authority";
-import { AiOutlineCheckCircle, AiOutlineCloseCircle, AiOutlineExclamationCircle } from "react-icons/ai";
+
 
 export type UpdateProps = VariantProps<typeof UpdateBoxStyle>;
 
@@ -8,7 +8,7 @@ export const UpdateBoxStyle = cva(
   {
     variants: {
       variant: {
-        Update: "border-2 bg-blue-500 border-blue-500 text-black",
+        Update: "border-2 bg-sky-700 border-sky-700 text-black",
        
       },
     },
@@ -30,8 +30,7 @@ export default function Update({
   return (
     <div className={UpdateBoxStyle({ variant })} {...props}>
       <div className="px-2 text-lg">
-        {variant === "Update" && <AiOutlineCheckCircle />}
-      
+        
       </div>
       {children}
     </div>
