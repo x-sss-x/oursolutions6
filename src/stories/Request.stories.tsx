@@ -1,29 +1,26 @@
-import type { Meta, StoryObj } from "@storybook/react";
-import Request from "../components/Request";
+import React from "react";
+import { Story } from "@storybook/react";
+import Profile, { ProfileProps } from "../components/Request";
+import { RiArrowRightLine } from "react-icons/ri";
+import profileImage from "../../public/Images/Profile/profile.png";
 
-const meta: Meta<typeof Request> = {
-  title: "components/ Request",
-  component:  Request,
+export default {
+  title: "Components/Request",
+  component: Profile,
 };
 
-//exporting meta of button story
-export default meta;
+const Template: Story<ProfileProps> = (args) => <Profile {...args} />;
 
-type Story = StoryObj<typeof Request>;
-
-//exporting primary varient of button
-export const  accept: Story = {
-  args: {
-    varient: " accepted",
-    children: "   Accept   ",
-  },
-  argTypes: {},
+export const Default = Template.bind({});
+Default.args = {
+  imageSrc: profileImage,
+  text: "John Doe",
+  id_no: 12345,
+  request:"Requested Taxi ride"
 };
 
-export const reject : Story = {
-    args: {
-      varient: "rejected",
-      children: " Reject ",
-    },
-    argTypes: {},
-  };
+export const WithIcon = Template.bind({});
+WithIcon.args = {
+  ...Default.args,
+  children: <RiArrowRightLine className="text-gray-500 mr-2" />,
+};

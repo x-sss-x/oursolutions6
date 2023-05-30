@@ -1,39 +1,56 @@
+import React from "react";
 import { VariantProps, cva } from "class-variance-authority";
-import { AiOutlineCheckCircle, AiOutlineCloseCircle, AiOutlineExclamationCircle } from "react-icons/ai";
+import Image, { StaticImageData } from "next/image";
+import { FaAngleRight } from "react-icons/fa";
 
-export type RequestProps = VariantProps<typeof  RequestBoxStyle>;
+export type ProfileProps = VariantProps<typeof profileStyles>;
 
-export const  RequestBoxStyle = cva(
-  "flex items-center justify-center shadow-lg rounded-3xl py-2 w-fit px-3",
+export const profileStyles = cva(
+  "flex border border-black items-center w-96 h-28 xs:w-64 xs:h-24 bg-zinc-300 rounded-xl",
   {
     variants: {
-      variant: {
-       accept: "border-2 bg-green-700 border-black text-white",
-       reject:"border-2 bg-red-700 border-black text-white"
+      size: {
+        default: "w-96 h-12",
       },
-    },
-    defaultVariants: {
-      variant: "accept",
     },
   }
 );
 
-interface  RequestExtendedProps extends  RequestProps {
-  children: string;
+interface ProfileExtendedProps extends ProfileProps {
+  imageSrc: StaticImageData;
+  text: string;
+  id_no: number;
+  request: string;
 }
 
-export default function  Request({
-  children,
-  variant,
+const Profile = ({
+  imageSrc,
+  text,
+  id_no,
+  request,
   ...props
-}:  RequestExtendedProps) {
+}: ProfileExtendedProps) => {
   return (
-    <div className={ RequestBoxStyle({ variant })} {...props}>
-      <div className="px-2 text-lg">
-        {variant === "accept" && <AiOutlineCheckCircle />}
-      {variant === "reject" && <AiOutlineCheckCircle/>}
+    <div className={profileStyles()}>
+      <div className="w-76 h-76 py-2 px-2">
+        <Image
+          src={imageSrc}
+          alt="Profile Image"
+          className="w-24 h-24 xs:w-16 xs:h-16"
+        />
       </div>
-      {children}
+
+      <div className="flex flex-col flex-grow">
+        <p className="text-center ml-4 text-gray-600 bold">{text}</p>
+        <p className="text-center ml-4 text-gray-500">{id_no}</p>
+        <p className="text-center ml-4 xs:text-sm text-sky-800">{request}</p>
+      </div>
+
+      <div className="flex items-center justify-center">
+        <FaAngleRight className="text-gray-500 text-2xl text-bold text-black" />
+      </div>
     </div>
   );
-}
+};
+
+export default Profile;
