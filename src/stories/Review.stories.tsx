@@ -17,7 +17,7 @@ export const Default: Story = {
     date: "May 12, 2023",
     rating: 5,
     reviewText: "This is a sample review text.",
-    name:"Santhosh",
+    name:"Varshitha",
     id:"234"
   },
 };

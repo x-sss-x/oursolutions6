@@ -1,39 +1,43 @@
 import { VariantProps, cva } from "class-variance-authority";
-import { AiOutlineCheckCircle, AiOutlineCloseCircle, AiOutlineExclamationCircle } from "react-icons/ai";
+import {
+  AiOutlineCheckCircle,
+  AiOutlineCloseCircle,
+  AiOutlineExclamationCircle,
+} from "react-icons/ai";
 
 export type AlertProps = VariantProps<typeof AlertBoxStyle>;
 
 export const AlertBoxStyle = cva(
-  "flex items-center justify-center shadow-lg rounded-3xl py-2 w-fit px-3",
+  "w-96 xs:w-48 xs:text-sm flex items-center justify-center  shadow-lg rounded-3xl px-5 py-2",
   {
     variants: {
-      variant: {
-        success: "border-2 bg-green-600 border-green-600 text-black",
-        error: "border-2 bg-red-600 border-red-600 text-black",
-        warning: "border-2 bg-blue-600 border-blue-600 text-black",
+      varient: {
+        success: "border-2 bg-green-600  border-gray-400 text-black",
+        error: "border-2 bg-red-600  border-gray-400 text-black",
+        warning: "border-2  bg-blue-400  border-gray-400 text-black",
       },
     },
     defaultVariants: {
-      variant: "success",
+      varient: "success",
     },
   }
 );
 
-interface AlertExtendedProps extends AlertProps {
+interface ButtonExtendedProps extends AlertProps {
   children: string;
 }
 
 export default function Alert({
   children,
-  variant,
+  varient,
   ...props
-}: AlertExtendedProps) {
+}: ButtonExtendedProps) {
   return (
-    <div className={AlertBoxStyle({ variant })} {...props}>
-      <div className="px-2 text-lg">
-        {variant === "success" && <AiOutlineCheckCircle />}
-        {variant === "warning" && <AiOutlineExclamationCircle />}
-        {variant === "error" && <AiOutlineCloseCircle />}
+    <div className={AlertBoxStyle({ varient })} {...props}>
+      <div >
+        {varient == "success" && <AiOutlineCheckCircle />}
+        {varient == "warning" && <AiOutlineExclamationCircle />}
+        {varient == "error" && <AiOutlineCloseCircle />}
       </div>
       {children}
     </div>
