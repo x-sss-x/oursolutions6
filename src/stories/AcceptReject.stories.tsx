@@ -14,7 +14,7 @@ type Story = StoryObj<typeof Request>;
 //exporting primary varient of button
 export const  accept: Story = {
   args: {
-    varient: " accepted",
+    varient: "accepted",
     children: "   Accept   ",
   },
   argTypes: {},
