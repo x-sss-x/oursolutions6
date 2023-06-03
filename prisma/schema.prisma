@@ -67,6 +67,7 @@ model review {
   review_content String
   customer       Customer @relation(fields: [customer_id], references: [customer_id])
   service        service  @relation(fields: [service_id], references: [service_id])
+  
 }
 
 model request {
