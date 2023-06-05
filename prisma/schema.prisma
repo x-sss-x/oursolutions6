@@ -8,21 +8,21 @@ datasource db {
 }
 
 model Customer {
-  customer_id     String    @id @default(uuid())
+  customer_id     String    @id @default(dbgenerated("gen_random_uuid()"))
   customer_email  String
   password        String
   age             Int
   address         String
-  phone_number    BigInt
+  phone_number    BigInt    @db.BigInt
   profile_picture String
   customer_name   String
   searchhistory   history[]
-  request         request[]
   review          review[]
+  request         request[]
 }
 
 model Serviceprovider {
-  serviceprovider_id              String    @id @default(uuid())
+  serviceprovider_id              String    @id @default(dbgenerated("gen_random_uuid()"))
   serviceprovider_email           String
   password                        String
   age                             Int
@@ -35,50 +35,50 @@ model Serviceprovider {
   serviceprovider_name            String
   service_name                    String
   searchhistory                   history[]
-  request                         request[]
   service                         service[]
+
+  request request[]
 }
 
 model service {
   service_name       String
-  service_id         String          @id @default(uuid())
-  serviceprovider_id String
-  history            history?
-  request            request[]
-  review             review[]
+  service_id         String          @id @default(dbgenerated("gen_random_uuid()"))
   service            Serviceprovider @relation(fields: [serviceprovider_id], references: [serviceprovider_id])
+  serviceprovider_id String
+  history            history[]
+  review             review[]
+  request            request[]
 }
 
 model history {
   date               DateTime
-  customer_id        String
-  serviceprovider_id String
-  service_id         String          @unique
   customer           Customer        @relation(fields: [customer_id], references: [customer_id])
-  searching          service         @relation(fields: [service_id], references: [service_id])
+  customer_id        String
   search             Serviceprovider @relation(fields: [serviceprovider_id], references: [serviceprovider_id])
+  serviceprovider_id String
+  searching          service         @relation(fields: [service_id], references: [service_id])
+  service_id         String          @unique
 }
 
 model review {
+  customer       Customer @relation(fields: [customer_id], references: [customer_id])
   customer_id    String
-  review_id      String   @id @default(uuid())
+  review_id      String  @id @default(dbgenerated("gen_random_uuid()"))
+  service        service  @relation(fields: [service_id], references: [service_id])
   service_id     String
   rating         Float
   review_content String
-  customer       Customer @relation(fields: [customer_id], references: [customer_id])
-  service        service  @relation(fields: [service_id], references: [service_id])
-  
+  created_at     DateTime @default(dbgenerated("now()")) @db.Timestamptz()
 }
 
 model request {
-  booking_id            String          @id @default(uuid())
+  booking_id            String          @id @default(dbgenerated("gen_random_uuid()"))
   reasons_for_rejecting String
   date                  DateTime
-  time                  DateTime
-  serviceprovider_id    String
-  customer_id           String
-  service_id            String
-  customer              Customer        @relation(fields: [customer_id], references: [customer_id])
-  service               service         @relation(fields: [service_id], references: [service_id])
   serviceprovider       Serviceprovider @relation(fields: [serviceprovider_id], references: [serviceprovider_id])
+  serviceprovider_id    String
+  customer              Customer        @relation(fields: [customer_id], references: [customer_id])
+  customer_id           String
+  service               service         @relation(fields: [service_id], references: [service_id])
+  service_id            String
 }
