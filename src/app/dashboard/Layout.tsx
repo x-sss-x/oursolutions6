@@ -1,23 +1,18 @@
-import {Roboto} from "next/font/google";
-import Link from "next/link";
+"use client"
+import Header from "@/components/Header";
+import Logo from "../../../public/Images/Header/Logo.png";
 
-interface props {
+export default function RootLayout({
+  children,
+}: {
   children: React.ReactNode;
-}
-export default function RootLayout({ children }: props) {
+}) {
+
+
   return (
-    <div className="h-screen w-screen overflow-hidden">
-     
-      
-      <div className="w-full h-full flex">
-      
-            <Link href={"/DASHBOARD/ProfilePage"}>
-            </Link>
-          
-        <main className="w-full h-full border-blue-300 flex items-center justify-center ">
-          {children}
-        </main>
-    </div>
+    <div className="w-full">
+        <Header logo={Logo} />
+      {children}
     </div>
   );
 }
