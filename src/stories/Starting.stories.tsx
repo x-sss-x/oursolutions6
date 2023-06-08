@@ -12,6 +12,6 @@ export default meta;
 export const Default: Story<StartingProps> = (args) => <Starting {...args} />;
 
 Default.args = {
- text: 'WE WORK TO MAKE YOU HAPPY',
+
 
 };

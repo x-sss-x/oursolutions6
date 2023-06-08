@@ -10,16 +10,16 @@ export type InputProps = VariantProps<typeof inputStyles>;
 export const inputStyles = cva('relative mx-auto my-2', {
   variants: {
     inputVariant: {
-      default: 'bg-stone-200 border border-gray-300 rounded-lg px-4 py-2',
-      email: 'bg-stone-200 border border-gray-300 rounded-lg pl-10 pr-4 py-2',
-      username: 'bg-stone-200 border border-gray-300 rounded-lg pl-10 pr-4 py-2',
-      phoneNumber: 'bg-stone-200 border border-gray-300 rounded-lg pl-10 pr-4 py-2',
-      age: 'bg-stone-200 border border-gray-300 rounded-lg pl-10 pr-4 py-2',
-      address: 'bg-stone-200 border border-gray-300 rounded-lg pl-10 pr-4 py-2',
-      password: 'bg-stone-200 border border-gray-300 rounded-lg pl-10 pr-4 py-2',
-      confirmPassword: 'bg-stone-200 border border-gray-300 rounded-lg pl-10 pr-4 py-2',
-      specialization: 'bg-stone-200 border border-gray-300 rounded-lg pl-10 pr-4 py-2',
-      idproff: 'bg-stone-200 border border-gray-300 rounded-lg pl-10 pr-4 py-2',
+      default: 'bg-stone-200 border border-sky-600  rounded-lg pl-10 pr-4 py-2',
+      email: 'bg-stone-200 border border-sky-600  rounded-lg pl-10 pr-4 py-2',
+      username: 'bg-stone-200 border border-sky-600  rounded-lg pl-10 pr-4 py-2',
+      phoneNumber: 'bg-stone-200 border  border-sky-600  rounded-lg pl-10 pr-4 py-2',
+      age: 'bg-stone-200 border border-sky-600  rounded-lg pl-10 pr-4 py-2',
+      address: 'bg-stone-200 border border-sky-600  rounded-lg pl-10 pr-4 py-2',
+      password:'bg-stone-200 border border-sky-600  rounded-lg pl-10 pr-4 py-2',
+      confirmPassword: 'bg-stone-200 border border-sky-600  rounded-lg pl-10 pr-4 py-2',
+      specialization:'bg-stone-200 border border-sky-600  rounded-lg pl-10 pr-4 py-2',
+      idproff:'bg-stone-200 border border-sky-600  rounded-lg pl-10 pr-4 py-2',
     },
   },
 });

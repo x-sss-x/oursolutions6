@@ -2,9 +2,14 @@ import React from "react";
 import LogoIcon from "../../public/Images/Header/Logo.png";
 import Header from "./Header";
 import Input from "./Input";
+import Button, { ButtonExtendedProps } from './Button';
 export default function EditProfile(){
+  const buttonProps: ButtonExtendedProps = {
+    intent: 'primary',
+   width:9,
+  };
     return(
-      <div>
+      <div className="w-screen">
             <Header logo={LogoIcon} />
             <div className="flex grid grid-cols-2">
             <Input inputVariant="email" placeholder="email@gmail.com" />
@@ -22,8 +27,10 @@ export default function EditProfile(){
             <Input inputVariant="confirmPassword" placeholder="confirmpassword" />
             
             </div>
+       
+            <center><Button {...buttonProps}>Updateinfo</Button>
+            </center>
             </div>
-            
                
     )
 };
