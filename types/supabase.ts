@@ -49,7 +49,7 @@ export interface Database {
           address: string
           age: number
           customer_email: string
-          customer_id: string
+          customer_id?: string
           customer_name: string
           password: string
           phone_number: number
@@ -94,16 +94,14 @@ export interface Database {
           reasons_for_rejecting: string
           service_id: string
           serviceprovider_id: string
-          time: string
         }
         Insert: {
-          booking_id: string
+          booking_id?: string
           customer_id: string
           date: string
           reasons_for_rejecting: string
           service_id: string
           serviceprovider_id: string
-          time: string
         }
         Update: {
           booking_id?: string
@@ -112,11 +110,11 @@ export interface Database {
           reasons_for_rejecting?: string
           service_id?: string
           serviceprovider_id?: string
-          time?: string
         }
       }
       review: {
         Row: {
+          created_at: string
           customer_id: string
           rating: number
           review_content: string
@@ -124,13 +122,15 @@ export interface Database {
           service_id: string
         }
         Insert: {
+          created_at?: string
           customer_id: string
           rating: number
           review_content: string
-          review_id: string
+          review_id?: string
           service_id: string
         }
         Update: {
+          created_at?: string
           customer_id?: string
           rating?: number
           review_content?: string
@@ -145,7 +145,7 @@ export interface Database {
           serviceprovider_id: string
         }
         Insert: {
-          service_id: string
+          service_id?: string
           service_name: string
           serviceprovider_id: string
         }
@@ -180,7 +180,7 @@ export interface Database {
           profile_picture: string
           service_name: string
           serviceprovider_email: string
-          serviceprovider_id: string
+          serviceprovider_id?: string
           serviceprovider_name: string
           specialisation: string
         }
