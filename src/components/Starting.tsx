@@ -21,10 +21,9 @@ const Starting: React.FC<Starting> = ({ text }) => {
    <button className={StartingButtonStyle()}>
     <Image src={StartImage} alt="starting page" width={204} height={204} />
      <div className="flex items-center justify-center">
-    
-      <div className="mt-2 text-center font-bold text-black ">{text}</div>
+     <h1 className=" mt-2 text-center font-bold text-black">
       WE WORK TO MAKE YOU HAPPY
-
+</h1>
       
 
       </div>

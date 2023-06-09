@@ -5,9 +5,9 @@ import Button from "@/components/Button";
 const Login = () => {
   return (
     <div>
-<h1 className="font-bold text-xl text-center m-4">
+      <h1 className="font-bold text-xl text-center m-4">
         Log into the existing account
-      </h1>      
+      </h1>
       <div className="m-3">
         <Input inputVariant="email" placeholder="Phone number / email "></Input>
       </div>

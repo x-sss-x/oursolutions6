@@ -3,7 +3,7 @@ import Image from 'next/image';
 import LoggedImage from '../../public/Images/Icons/successfull.png';
 import Button, { ButtonExtendedProps } from './Button';
 
-const CreateSuccessButtonStyle = cva(' flex flex-col items-center justify-center  bg-white h-[323px] w-[368px] py-5 px-5');
+const CreateSuccessButtonStyle = cva(' flex flex-col items-center justify-center  bg-white h-screen w-screen py-5 px-5');
 
 interface CreateSuccessProps {
   text: string;
@@ -19,7 +19,17 @@ const CreateSuccess: React.FC<CreateSuccess> = ({ text }) => {
     <center>
     
   
-   <button className={CreateSuccessButtonStyle()}>
+   <h1 className=" mt-9 text-center font-bold text-black">
+             
+   Congratulations your account has 
+   
+               </h1>
+               <h1 className=" mt-2 text-center font-bold text-black">
+             
+       been successfully created
+             
+                         </h1>
+           
     <Image src={LoggedImage} alt="Set your password" width={104} height={104} />
      <div className="flex items-center justify-center">
     
@@ -29,7 +39,7 @@ const CreateSuccess: React.FC<CreateSuccess> = ({ text }) => {
       </div>
       
       
-    </button>
+  
    
     <Button {...buttonProps}>Continue</Button>
 
