@@ -23,6 +23,7 @@ const ProfilePicture = () => {
   };
 
   return (
+    <center>
     <div className="profile-picture" onClick={handleFileSelect}>
       {profilePic ? (
         <img src={profilePic} alt="Profile" className="picture" />
@@ -66,6 +67,7 @@ const ProfilePicture = () => {
       `}</style>
     
     </div>
+    </center>
   );
 };
 

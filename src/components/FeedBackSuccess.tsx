@@ -18,14 +18,22 @@ interface FeedBackSuccessPropsExtended extends FeedBackSuccessProps {
 
 const FeedBackSuccess = ({ successText, descriptionText, ...props }: FeedBackSuccessPropsExtended): JSX.Element => {
   return (
+    <div>
+
+  <center>
+    <div>
     <div className={feedbackSuccessStyles()} {...props}>
       <div className="flex items-start">
         <RiCheckboxCircleFill className="text-black text-6xl" />
       </div>
+    
       <div>
         <p className="text-2xl xs:text-lg text-center text-black font-semibold">{successText}</p>
+        Updated successfully
         <p className="text-sm text-center text-gray-200">{descriptionText}</p>
-      </div>
+      </div></div>
+    </div>
+    </center>
     </div>
   );
 };
