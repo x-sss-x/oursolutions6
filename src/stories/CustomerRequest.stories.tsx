@@ -13,11 +13,5 @@ const Template: Story<CustomerRequestProps> = (args) => <CustomerRequest {...arg
 export const Default = Template.bind({});
 Default.args = {
   imageSrc: ProfileIcon,
-  name: "John",
-  id: "200303",
-  pickupTime: "11:00AM",
-  fromLocation: "Bangalore",
-  toLocation: "Airport",
-  date: "2/3/23",
-  status: "Accepted",
+ 
 };
