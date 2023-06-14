@@ -1,27 +1,32 @@
 import React from "react";
-import LogoIcon from "../../public/Images/Header/Logo.png";
-import Header from "./Header";
-import Input from "./Input";
+import Button, { ButtonExtendedProps } from './Button';
+import Inputs from "./Inputs";
 export default function EditProfileS(){
+  const buttonProps: ButtonExtendedProps = {
+    intent: 'primary',
+   width:9,
+  };
     return(
       <div>
-            <Header logo={LogoIcon} />
+          
             <div className="flex grid grid-cols-2">
-            <Input inputVariant="email" placeholder="email@gmail.com" />
-            <Input inputVariant="username" placeholder="username" />
+            <Inputs inputsVariant="email" placeholder="email@gmail.com" />
+            <Inputs inputsVariant="username" placeholder="username" />
             </div>
             <div className="flex grid grid-cols-2">
-            <Input inputVariant="phoneNumber" placeholder="phonenumber" />
-            <Input inputVariant="idproof" placeholder="idproof" />
+            <Inputs inputsVariant="phoneNumber" placeholder="phonenumber" />
+            <Inputs inputsVariant ="idproof" placeholder="idproof" />
             </div>
             <div className="flex grid grid-cols-2">
-            <Input inputVariant="address" placeholder="address" />
-            <Input inputVariant="password" placeholder="password" />
+            <Inputs inputsVariant="address" placeholder="address" />
+            <Inputs inputsVariant="password" placeholder="password" />
             </div>
             <div className="flex grid grid-cols-2">
-            <Input inputVariant="confirmPassword" placeholder="confirmpassword" />
-            <Input inputVariant="specialization" placeholder="specialization" />
+            <Inputs inputsVariant="confirmPassword" placeholder="confirmpassword" />
+            <Inputs inputsVariant="specialization" placeholder="specialization" />
             </div>
+            <center><Button {...buttonProps}>Updateinfo</Button>
+            </center>
             </div>
             
                

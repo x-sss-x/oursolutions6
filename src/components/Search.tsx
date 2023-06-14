@@ -1,7 +1,6 @@
 import { VariantProps, cva } from "class-variance-authority";
 import { AiOutlineSearch } from "react-icons/ai";
 import { ChangeEvent } from "react";
-import React from "react";
 
 export type SearchProps = VariantProps<typeof searchStyles>;
 

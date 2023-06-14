@@ -1,44 +1,99 @@
-"use client";
-import React, { useEffect, useCallback, useState } from "react";
-import { useSelector } from "react-redux";
-import { RootState } from "../../store";
-import { useAppDispatch } from "../../../hooks";
-import { viewFeedback, storeFeedback } from "../../store/Feedback.silce";
-
-const Page: React.FC = () => {
-  const feedbackData = useSelector((state: RootState) => state.feedback.data);
-  const isLoading = useSelector((state: RootState) => state.feedback.isLoading);
-  const isPosting = useSelector((state: RootState) => state.feedback.isPosting);
-  const error = useSelector((state: RootState) => state.feedback.error);
-  const [content, setContent] = React.useState("");
-  const [rating, setRating] = React.useState(0);
-  const dispatch = useAppDispatch();
-
-  const handleSubmit = () => {
-    dispatch(
-      storeFeedback({
-        content:"rgxhcvjkl",
-        rating: 2.8,
-        service_id: "48da29e7-1f9e-448f-b7b2-6557dffd6387",
-        customer_id: "e238207a-b30e-49e3-8d69-f7e6848fe813",
-      })
-    );
-    setContent("");
-    setRating(0);
-  };
-
+import BikeRide from "@/components/BikeRide";
+import CouponDeals from "@/components/CouponDeals";
+import CourierService from "@/components/CourierService";
+import DogWalking from "@/components/DogWalking";
+import FoodDelivery from "@/components/FoodDelivery";
+import HomeCleaning from "@/components/HomeCleaning";
+import LiquorDelivery from "@/components/LiquorDelivery";
+import MedicineDelivery from "@/components/MedicineDelivery";
+import PetsCare from "@/components/PetsCare";
+import Security from "@/components/Security";
+import TaxiRide from "@/components/TaxiRide";
+import WaterDelivery from "@/components/WaterDelivery";
+import Link from "next/link";
+const FeedbackCategories = () => {
   return (
     <div>
-      <button disabled={isPosting} onClick={handleSubmit}>
-        click
-      </button>
-      <div>
-        {isLoading && <p>Loading...</p>}
-        {error && <p>Error: {error}</p>}
-        {isPosting ? "Posting..." : "Post"}
+      <div className="flex justify-center items-center m-4">
+        <Link href="./feedback/FeedbackOnService/">
+          <div className="m-4">
+            <BikeRide text="Bike Ride" />
+          </div>
+        </Link>
+        <Link href="./feedback/FeedbackOnService/">
+          <div className="m-4">
+            <TaxiRide text="Taxi Ride" />
+          </div>
+        </Link>
+
+        <Link href="./feedback/FeedbackOnService/">
+          <div className="m-4">
+            <HomeCleaning text="Home Cleaning" />
+          </div>
+        </Link>
+      </div>
+
+      <div className="flex justify-center items-center m-4">
+        <Link href="./feedback/FeedbackOnService/">
+          <div className="m-4">
+            <CourierService text="Courier Service" />
+          </div>
+        </Link>
+
+        <Link href="./feedback/FeedbackOnService/">
+          <div className="m-4">
+            <FoodDelivery text="Food Delivery" />
+          </div>
+        </Link>
+
+        <Link href="./feedback/FeedbackOnService/">
+          <div className="m-4">
+            <PetsCare text="Pets Care" />
+          </div>
+        </Link>
+      </div>
+
+      <div className="flex justify-center items-center m-4">
+        <Link href="./feedback/FeedbackOnService/">
+          <div className="m-4">
+            <MedicineDelivery text="Medicine Delivery" />
+          </div>
+        </Link>
+
+        <Link href="./feedback/FeedbackOnService/">
+          <div className="m-4">
+            <Security text="Security" />
+          </div>
+        </Link>
+
+        <Link href="./feedback/FeedbackOnService/">
+          <div className="m-4">
+            <DogWalking text="Dog Walking" />
+          </div>
+        </Link>
+      </div>
+
+      <div className="flex justify-center items-center m-4">
+        <Link href="./feedback/FeedbackOnService/">
+          <div className="m-4">
+            <WaterDelivery text="Water Delivery" />
+          </div>
+        </Link>
+
+        <Link href="./feedback/FeedbackOnService/">
+          <div className="m-4">
+            <CouponDeals text="Coupon Deals" />
+          </div>
+        </Link>
+
+        <Link href="./feedback/FeedbackOnService/">
+          <div className="m-4">
+            <LiquorDelivery text="Liquor Delivery" />
+          </div>
+        </Link>
       </div>
     </div>
   );
 };
 
-export default Page;
+export default FeedbackCategories;
