@@ -1,6 +1,6 @@
 "use client"
-import Header from "@/components/Header";
-import Logo from "../../../../public/Images/Header/Logo.png";
+import Logo from "../../../public/Images/Header/Logo.png";
+import Header2 from "@/components/Header2";
 
 export default function RootLayout({
   children,
@@ -11,7 +11,7 @@ export default function RootLayout({
 
   return (
     <div className="w-full">
-        <Header logo={Logo} />
+        <Header2 logo={Logo} />
       {children}
     </div>
   );

@@ -31,7 +31,7 @@ const Checkemail: React.FC<Checkemail> = ({ text }) => {
                                     </h1>
         
                                     <div className='mx-auto mt-5'>
-              <Button>Open email app</Button>
+              <a href="/forgotpage/Forgotpassstep3"><Button>Open email app</Button></a>
 
             </div>
             <h1 className=" mt-2 text-center font-latin  text-black">

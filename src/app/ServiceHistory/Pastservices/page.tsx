@@ -11,7 +11,7 @@ const page = () => {
         <div className="flex items-center pt-4 justify-center">
             <SearchBar placeholder={''}/>
         </div>
-       <a href="/ServiceHistory/CustomerReq"> <div className="flex items-center pt-8 absolute justify-center">
+       <a href="/ServiceHistory/CustomerReq"> <div className="flex items-center pt-8  justify-center">
             <PastServiceHistory />
         </div></a>
     </div>

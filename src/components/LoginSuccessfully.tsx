@@ -5,12 +5,9 @@ import Button, { ButtonExtendedProps } from './Button';
 
 const LoginSuccessfullyButtonStyle = cva(' flex flex-col items-center justify-center  bg-white h-screen w-screen py-5 px-5');
 
-interface LoginSuccessfullyProps {
-  text: string;
-}
 const buttonProps: ButtonExtendedProps = {
     intent: 'primary',
-   width:35,
+    width: 35,
   };
  
 
