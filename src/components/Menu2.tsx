@@ -65,7 +65,7 @@ const Menu = () => {
                 </HeadlessMenu.Item>
                 <HeadlessMenu.Item>
                   {({ active }) => (
-                    <button
+                  <button
                       className={`${
                         active ? 'bg-gray-400' : 'bg-gray-200'
                       } w-full px-4 py-2 text-gray-800 block hover:bg-gray-400 border border-sky-600`}

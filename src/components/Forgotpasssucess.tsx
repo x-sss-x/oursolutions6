@@ -39,12 +39,12 @@ Click below to login in
       
                                     <div className='mx-auto mt-5'>
    
-    <Button {...buttonProps}>Continue</Button>
+    <a href="http://localhost:3000/"><Button {...buttonProps}>Continue</Button></a>
 </div>
-    <h1 className=" mt-[260px] text-center font-latin  text-black">
+    <a href="/login/[user]"><h1 className=" mt-[260px] text-center font-latin  text-black">
 Back to log in
                         
-                                    </h1>
+                                    </h1></a>
   
     </center>
 

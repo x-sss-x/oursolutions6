@@ -1,7 +1,6 @@
 import { VariantProps, cva } from "class-variance-authority";
 import { AiOutlineSearch } from "react-icons/ai";
 import { ChangeEvent } from "react";
-import React from "react";
 
 export type SearchProps = VariantProps<typeof searchStyles>;
 
@@ -27,7 +26,7 @@ interface SearchExtendedProps extends SearchProps {
   onSearch: () => void;
 }
 
-export default function Search({
+export default function Searchbar({
   placeholder,
   inputVariant = "default",
   value,
@@ -37,7 +36,7 @@ export default function Search({
 }: SearchExtendedProps) {
   return (
     <div className={searchStyles()}>
-      <div className="relative">
+      <div className="relative ">
         <input
           type="text"
           placeholder={placeholder}

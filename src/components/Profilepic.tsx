@@ -1,3 +1,4 @@
+"use client"
 import React, { useRef, useState } from 'react';
 
 const ProfilePicture = () => {
@@ -32,6 +33,7 @@ const ProfilePicture = () => {
       )}
 
       <input
+  
         type="file"
         accept="image/*"
         ref={fileInputRef}
@@ -41,8 +43,8 @@ const ProfilePicture = () => {
    
       <style jsx>{`
         .profile-picture {
-          width: 100px;
-          height: 100px;
+          width: 180px;
+          height: 180px;
           border-radius: 50%;
           display: flex;
           justify-content: center;
@@ -53,8 +55,8 @@ const ProfilePicture = () => {
         }
 
         .picture {
-          width: 100%;
-          height: 100%;
+          width: 140%;
+          height: 140%;
           object-fit: cover;
         }
 
