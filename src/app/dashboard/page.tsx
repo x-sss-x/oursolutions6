@@ -45,7 +45,7 @@ var Page = () => {
         />
          <div className="my-12 ml-1">
           <p>Hi</p>
-          <p>Santhosh</p>{" "}
+          <p>Rahul</p>{" "}
           </div>
         
         </div>
