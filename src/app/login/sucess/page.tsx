@@ -11,7 +11,7 @@ const page = () => {
         alt="Successfull"
       /></div><div className="flex justify-center item-center">
       <h3>Logged in Successfully</h3></div>
-      <a href="http://localhost:3000/"> <Button>Continue</Button></a>
+      <a href="http://localhost:3000/Homepage/"> <Button>Continue</Button></a>
     </div> </div>
   );
 };
