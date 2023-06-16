@@ -1,6 +1,6 @@
 "use client";
 import React from "react";
-import profilePhoto from "../../../public/Images/Profile/profile.png";
+import profilePhoto from "../../../public/Images/Profile/profile1.png";
 import Image from "next/image";
 import {
   LineChart,
@@ -69,11 +69,11 @@ var Page = () => {
               <p className="text-right">{item.comments}</p>
             </div>
             <div className="flex justify-between my-2">
-              <p className="text-left">Customers:</p>
+              <p className="text-left">Service Providers:</p>
               <p className="text-right">{item.customers}</p>
             </div>
             <div className="flex justify-between my-2">
-              <p className="text-left">Revenue:</p>
+              <p className="text-left">Earning:</p>
               <p className="text-right">{item.revenue}</p>
             </div>
           </div>
@@ -109,8 +109,8 @@ var Page = () => {
           className="my-3 ml-10 w-28 h-28 xs:w-20 xs:h-20"
         />
          <div className="my-12 ml-4 xs:my-3">
-          <p className="font-bold ">Santhosh</p>
-          <p>This service is awesome</p>{" "}
+          <p className="font-bold ">VARSHITHA</p>
+          <p>The service is amazing.please hire him.</p>{" "}
           </div>
         
         </div>
