@@ -8,11 +8,12 @@ interface ReviewProps {
   name: string;
   id: string;
   date: string;
+  time:number;
   rating: number;
   reviewText: string;
 }
 
-export default function Review({ icon, name, id, date, rating, reviewText }: ReviewProps) {
+export default function Review({ icon, name, id, date,time, rating, reviewText }: ReviewProps) {
   const renderStar = (index: number) => {
     const starIndex = index + 1;
     if (starIndex <= rating) {
@@ -34,8 +35,10 @@ export default function Review({ icon, name, id, date, rating, reviewText }: Rev
             <p>ID: {id}</p>
           </div>
         </div>
-        <div>{date}</div>
+        <div className="mt-[3px]">{date}</div>
+        
       </div>
+      <div className=" mt-[1px]  ml-[680px]">{time}</div>
       <div className="flex mx-5">
         <h1 className="text-sky-800 text-xl mr-2">{rating}</h1>
         {[...Array(5)].map((_, index) => (
