@@ -9,14 +9,14 @@ const FrameC = () => {
         </div>
       </div>
       <div>
-        <p className="text-xl font-bold mb-2">Service Provider Eva Olsen  </p>
-        <p className="text-x font-bold mb-2">Service Provider ID  46OS02</p>
-        <p className="text-x font-bold mb-2">Service   TAXI RIDE</p>
-        <p className="text-x font-bold mb-2">Date 10/04/2023</p>
-        <p className="text-x font-bold mb-2">Time 4:30 PM</p>
-        <p className="text-x font-bold mb-2">From KR puram</p>
-        <p className="text-x font-bold mb-2">To Hoskote</p>
-        <p className="text-x font-bold mb-2">AMOUNT CHARGED 850 RS</p>
+        <p className="text-xl font-bold mb-2">Service Provider: Eva Olsen  </p>
+        <p className="text-x  mb-2">Service Provider ID : 46OS02</p>
+        <p className="text-x  mb-2">Service  : TAXI RIDE</p>
+        <p className="text-x  mb-2">Date :10/04/2023</p>
+        <p className="text-x  mb-2">Time: 4:30 PM</p>
+        <p className="text-x  mb-2">From: KR puram</p>
+        <p className="text-x  mb-2">To :Hoskote</p>
+        <p className="text-x  mb-2">AMOUNT CHARGED :850 RS</p>
       </div>
     </div>
   );

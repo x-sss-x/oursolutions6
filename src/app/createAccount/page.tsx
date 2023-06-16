@@ -104,7 +104,7 @@ const SignupForm = () => {
         </div>
         <div className="flex items-center mb-6 justify-center">
           <button
-            className=" bg-blue-500 hover:bg-sky-700 text-white   font-bold py-2 px-4 rounded focus:outline-none focus:shadow-outline"
+            className=" bg-blue-500 hover:bg-sky-700 text-white w-[300px]  font-bold py-2 px-4 rounded-xl focus:outline-none focus:shadow-outline"
             type="submit"
           >
            <a href="/createAccount/verification"> Create Account</a>

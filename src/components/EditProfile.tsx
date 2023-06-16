@@ -21,10 +21,10 @@ const SignupForm = () => {
 
   return (
     <div>
-      <form className="grid grid-cols-2 gap-6 max-w-md bg-white rounded px-8 pt-6 pb-8 mb-4" onSubmit={handleSubmit}>
+      <form className="grid grid-cols-2 gap-6 max-w-md bg-white rounded px-2 pt-6 pb-8 mb-4" onSubmit={handleSubmit}>
         <div>
           <input
-            className="appearance-none border rounded w-full bg-gray-200 py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline"
+            className="appearance-none border-2 border-sky-600 rounded-lg w-full bg-gray-200 py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline"
             id="email"
             type="email"
             placeholder="Email"
@@ -35,7 +35,7 @@ const SignupForm = () => {
         </div>
         <div>
           <input
-            className="appearance-none border rounded w-full py-2 bg-gray-200 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline"
+            className="appearance-none border-2 border-sky-600 rounded-lg w-full py-2 bg-gray-200 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline"
             id="username"
             type="text"
             placeholder="Username"
@@ -46,7 +46,7 @@ const SignupForm = () => {
         </div>
         <div>
           <input
-            className="appearance-none border rounded w-full py-2 bg-gray-200 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline"
+            className="appearance-none border-2 border-sky-600 rounded-lg w-full py-2 bg-gray-200 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline"
             id="phoneNumber"
             type="text"
             placeholder="Phone Number"
@@ -57,7 +57,7 @@ const SignupForm = () => {
         </div>
         <div>
           <input
-            className="appearance-none border rounded w-full py-2 bg-gray-200 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline"
+            className="appearance-none border-2 border-sky-600 rounded-lg w-full py-2 bg-gray-200 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline"
             id="age"
             type="text"
             placeholder="Age"
@@ -68,7 +68,7 @@ const SignupForm = () => {
         </div>
         <div>
           <input
-            className="appearance-none border rounded w-full py-2 px-3 bg-gray-200 text-gray-700 leading-tight focus:outline-none focus:shadow-outline"
+            className="appearance-none border-2 border-sky-600 rounded-lg w-full py-2 px-3 bg-gray-200 text-gray-700 leading-tight focus:outline-none focus:shadow-outline"
             id="address"
             type="text"
             placeholder="Address"
@@ -79,7 +79,7 @@ const SignupForm = () => {
         </div>
         <div>
           <input
-            className="appearance-none border rounded w-full py-2 px-3 bg-gray-200 text-gray-700 leading-tight focus:outline-none focus:shadow-outline"
+            className="appearance-none border-2 border-sky-600 rounded-lg w-full py-2 px-3 bg-gray-200 text-gray-700 leading-tight focus:outline-none focus:shadow-outline"
             id="password"
             type="password"
             placeholder="Password"
@@ -90,7 +90,7 @@ const SignupForm = () => {
         </div>
         <div>
           <input
-            className="appearance-none border rounded w-full py-2 px-3 bg-gray-200 text-gray-700 leading-tight focus:outline-none focus:shadow-outline"
+            className="appearance-none border-2 border-sky-600 rounded-lg w-full py-2 px-3 bg-gray-200 text-gray-700 leading-tight focus:outline-none focus:shadow-outline"
             id="confirmPassword"
             type="password"
             placeholder="Confirm Password"
@@ -101,7 +101,7 @@ const SignupForm = () => {
         </div>
         <div>
           <input
-            className="appearance-none border rounded w-full py-2 px-3 bg-gray-200 text-gray-700 leading-tight focus:outline-none focus:shadow-outline"
+            className="appearance-none border-2 border-sky-600 rounded-lg w-full py-2 px-3 bg-gray-200 text-gray-700 leading-tight focus:outline-none focus:shadow-outline"
             id="customerId"
             type="text"
             placeholder="Customer ID"
@@ -112,7 +112,7 @@ const SignupForm = () => {
         </div>
         <div className="col-span-2 flex items-center justify-center">
           <button
-            className="bg-blue-500 hover:bg-sky-700 text-white font-bold py-2 px-4 rounded focus:outline-none focus:shadow-outline"
+            className="bg-blue-500 hover:bg-sky-700 w-[200px] text-white font-bold py-2 px-4 rounded-xl focus:outline-none focus:shadow-outline"
             type="submit"
           >
           <Link href="/UpdateSucc" > Update</Link>
