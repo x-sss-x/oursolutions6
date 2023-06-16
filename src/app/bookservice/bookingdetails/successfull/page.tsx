@@ -1,4 +1,4 @@
-import SuccessTick from "../../../../../public/Images/SuccessMessage/Tick.png"
+import SuccessTick from "../../../../../public/Images/Icons/successfull.png"
 import Image from "next/image"
 import React from "react";
 import Button from "@/components/Button";
