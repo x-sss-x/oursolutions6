@@ -45,7 +45,7 @@ var Page = () => {
         />
          <div className="my-12 ml-1">
           <p>Hi</p>
-          <p>Santhosh</p>{" "}
+          <p>Varshitha</p>{" "}
           </div>
         
         </div>
@@ -80,7 +80,7 @@ var Page = () => {
         ))}
       </div>
       <div className="container mx-auto p-4 w-full h-96 bg-stone-200 p-4 my-2 rounded-xl ">
-        <h1 className="text-xl font-bold mb-4 xs:text-lg">Customers</h1>
+        <h1 className="text-xl font-bold mb-4 xs:text-lg">Serviceproviders</h1>
         <ResponsiveContainer width="100%" height="100%">
           <LineChart data={data}>
             <CartesianGrid strokeDasharray="3 3" />

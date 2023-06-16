@@ -1,7 +1,7 @@
 "use client"
 import React, { useRef, useState } from 'react';
 
-const ProfilePicture = () => {
+const ProfilePictureSP = () => {
   const fileInputRef = useRef<HTMLInputElement>(null);
   const [profilePic, setProfilePic] = useState<string | null>(null);
 
@@ -73,4 +73,4 @@ const ProfilePicture = () => {
   );
 };
 
-export default ProfilePicture;
+export default ProfilePictureSP;
