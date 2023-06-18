@@ -51,12 +51,12 @@ var Page = () => {
         </div>
       </div>
       <div className="flex justify-center items-center">
-        <button className="bg-stone-200 p-4 rounded-xl text-2xl hover:bg-stone-400 xs:text-sm">Today</button>
-        <button className="bg-stone-200 p-4 ml-12 rounded-xl text-2xl hover:bg-stone-400 xs:text-sm ">Last 6 days</button>
-        <button className="bg-stone-200 p-4 ml-12 rounded-xl text-2xl hover:bg-stone-400 xs:text-sm">Month</button>
-        <button className="bg-stone-200 p-4 ml-12 rounded-xl text-2xl hover:bg-stone-400 xs:text-sm">Year</button>
+        <button className="bg-stone-200 p-4 rounded-xl text-2xl border-2 border-sky-500 hover:bg-stone-400 xs:text-sm">Today</button>
+        <button className="bg-stone-200 p-4 ml-12 rounded-xl text-2xl border-2 border-sky-500 hover:bg-stone-400 xs:text-sm ">Last 6 days</button>
+        <button className="bg-stone-200 p-4 ml-12 rounded-xl text-2xl border-2 border-sky-500 hover:bg-stone-400 xs:text-sm">Month</button>
+        <button className="bg-stone-200 p-4 ml-12 rounded-xl text-2xl border-2 border-sky-500 hover:bg-stone-400 xs:text-sm">Year</button>
       </div>
-      <div className="container mx-auto p-4 w-full h-60 bg-stone-200 p-4 my-2 rounded-xl">
+      <div className="container mx-auto p-4 w-full h-60 border-2 border-sky-500 bg-stone-200 p-4 my-2 rounded-xl">
         <h1 className="text-xl font-bold mb-4">Analytics</h1>
         {analytics.map((item, index) => (
           <div key={index} className="">
@@ -79,7 +79,7 @@ var Page = () => {
           </div>
         ))}
       </div>
-      <div className="container mx-auto p-4 w-full h-96 bg-stone-200 p-4 my-2 rounded-xl ">
+      <div className="container mx-auto border-2 border-sky-500 p-4 w-full h-96 bg-stone-200 p-4 my-2 rounded-xl ">
         <h1 className="text-xl font-bold mb-4 xs:text-lg">Customers</h1>
         <ResponsiveContainer width="100%" height="100%">
           <LineChart data={data}>
@@ -98,7 +98,7 @@ var Page = () => {
           </LineChart>
         </ResponsiveContainer>
       </div>
-      <div className="container mx-auto p-4 w-full h-96 bg-stone-200 p-4 my-2 rounded-xl mt-5">
+      <div className="container mx-auto border-2 border-sky-500 p-4 w-full h-96 bg-stone-200 p-4 my-2 rounded-xl mt-5">
         <h1 className="mx-12 font-bold text-xl">Comments</h1>
         <div className="flex">
           
@@ -110,7 +110,9 @@ var Page = () => {
         />
          <div className="my-12 ml-4 xs:my-3">
           <p className="font-bold ">Santhosh</p>
-          <p>This service is awesome</p>{" "}
+          <p className="font-light text-gray-300">07/04/23</p>
+       
+          <p>The service is amazing.please keep uploading new services</p>{" "}
           </div>
         
         </div>
