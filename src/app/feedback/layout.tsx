@@ -1,21 +1,17 @@
 "use client"
-import { useEffect } from "react";
-import { useAppDispatch } from "../../../hooks";
-import { viewFeedback } from "../../store/Feedback.silce";
+import Header from "@/components/Header";
+import Logo from "../../../public/Images/Header/Logo.png";
 
 export default function RootLayout({
   children,
 }: {
   children: React.ReactNode;
 }) {
-  const dispatch = useAppDispatch()
 
-  useEffect(()=>{
-    dispatch(viewFeedback())
-  },[dispatch])
 
   return (
-    <div className={"flex h-full w-full items-center justify-center"}>
+    <div className="w-full">
+        <Header logo={Logo} />
       {children}
     </div>
   );

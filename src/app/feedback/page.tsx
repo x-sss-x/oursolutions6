@@ -1,106 +1,99 @@
-"use client";
-import React, { useEffect , useCallback, useState} from "react";
-import { useSelector } from "react-redux";
-import { RootState } from "../../store";
-import { useAppDispatch } from "../../../hooks";
-import { viewFeedback, storeFeedback } from "../../store/Feedback.silce";
-import { useParams } from "next/navigation";
-import { SupaClient } from "../../../utils/supabase";
-
-
-const Page: React.FC = () => {
-  const feedbackData = useSelector((state: RootState) => state.feedback.data);
-  const isLoading = useSelector((state: RootState) => state.feedback.isLoading);
-  const isPosting = useSelector((state: RootState) => state.feedback.isPosting);
-  const error = useSelector((state: RootState) => state.feedback.error);
-  const [content, setContent] = React.useState("");
-  const [rating, setRating] = React.useState(0);
-  const [username, setUsername] = useState<undefined | string>(undefined);
-  const [service_id, setService_id] = useState<undefined | string>("");
-
-  const dispatch = useAppDispatch();
-  const customer_id="c68316b0-7f3c-4ad4-b1a1-e2516d33f458"
-  
-const selected_service="enim"
-useEffect(()=>{
-  fetchUsername()
-  fetchService()
-},[])
-
-  const fetchService = useCallback(async () => {
-    const response = await SupaClient.from("service")
-      .select("service_id")
-      .in("service_name", [selected_service]);
-    if (response.data && response.data.length > 0) {
-      setService_id(response.data[0].service_id);
-    }
-  }, [selected_service]);
-  
-  
-
-  const fetchUsername = useCallback(async () => {
-    const response = await SupaClient.from("Customer")
-      .select("customer_name")
-      .eq("id", customer_id)
-      .single();
-    setUsername(response.data?.customer_name);
-  }, [customer_id]);
-
- 
-
-  // ...
-  
-  const handleSubmit = () => {
-    if (content) {
-      dispatch(
-        storeFeedback({
-          content,
-          rating,
-          service_id: service_id || "", 
-          customer_id: customer_id, 
-        })
-      );
-      setContent("");
-      setRating(0);
-    }
-  };
-  
+import BikeRide from "@/components/BikeRide";
+import CouponDeals from "@/components/CouponDeals";
+import CourierService from "@/components/CourierService";
+import DogWalking from "@/components/DogWalking";
+import FoodDelivery from "@/components/FoodDelivery";
+import HomeCleaning from "@/components/HomeCleaning";
+import LiquorDelivery from "@/components/LiquorDelivery";
+import MedicineDelivery from "@/components/MedicineDelivery";
+import PetsCare from "@/components/PetsCare";
+import Security from "@/components/Security";
+import TaxiRide from "@/components/TaxiRide";
+import WaterDelivery from "@/components/WaterDelivery";
+import Link from "next/link";
+const FeedbackCategories = () => {
   return (
     <div>
-      {isLoading && <p>Loading...</p>}
-      {error && <p>Error: {error}</p>}
+      <div className="flex justify-center items-center m-4">
+        <Link href="./feedback/FeedbackOnService/">
+          <div className="m-4">
+            <BikeRide text="Bike Ride" />
+          </div>
+        </Link>
+        <Link href="./feedback/FeedbackOnService/">
+          <div className="m-4">
+            <TaxiRide text="Taxi Ride" />
+          </div>
+        </Link>
 
-      
+        <Link href="./feedback/FeedbackOnService/">
+          <div className="m-4">
+            <HomeCleaning text="Home Cleaning" />
+          </div>
+        </Link>
+      </div>
 
-      <form >
-        <div>
-          <label htmlFor="content">Content</label>
-          <input
-            type="text"
-            id="content"
-            name="content"
-            value={content}
-            onChange={(e) => setContent(e.target.value)}
-            required
-          />
-        </div>
-        <div>
-          <label htmlFor="rating">Rating</label>
-          <input
-            type="number"
-            id="rating"
-            name="rating"
-            value={rating}
-            onChange={(e) => setRating(parseInt(e.target.value))}
-            required
-          />
-        </div>
-        <button type="submit" disabled={isPosting} onClick={handleSubmit}>
-          {isPosting ? "Posting..." : "Post"}
-        </button>
-      </form>
+      <div className="flex justify-center items-center m-4">
+        <Link href="./feedback/FeedbackOnService/">
+          <div className="m-4">
+            <CourierService text="Courier Service" />
+          </div>
+        </Link>
+
+        <Link href="./feedback/FeedbackOnService/">
+          <div className="m-4">
+            <FoodDelivery text="Food Delivery" />
+          </div>
+        </Link>
+
+        <Link href="./feedback/FeedbackOnService/">
+          <div className="m-4">
+            <PetsCare text="Pets Care" />
+          </div>
+        </Link>
+      </div>
+
+      <div className="flex justify-center items-center m-4">
+        <Link href="./feedback/FeedbackOnService/">
+          <div className="m-4">
+            <MedicineDelivery text="Medicine Delivery" />
+          </div>
+        </Link>
+
+        <Link href="./feedback/FeedbackOnService/">
+          <div className="m-4">
+            <Security text="Security" />
+          </div>
+        </Link>
+
+        <Link href="./feedback/FeedbackOnService/">
+          <div className="m-4">
+            <DogWalking text="Dog Walking" />
+          </div>
+        </Link>
+      </div>
+
+      <div className="flex justify-center items-center m-4">
+        <Link href="./feedback/FeedbackOnService/">
+          <div className="m-4">
+            <WaterDelivery text="Water Delivery" />
+          </div>
+        </Link>
+
+        <Link href="./feedback/FeedbackOnService/">
+          <div className="m-4">
+            <CouponDeals text="Coupon Deals" />
+          </div>
+        </Link>
+
+        <Link href="./feedback/FeedbackOnService/">
+          <div className="m-4">
+            <LiquorDelivery text="Liquor Delivery" />
+          </div>
+        </Link>
+      </div>
     </div>
   );
 };
 
-export default Page;
+export default FeedbackCategories;
