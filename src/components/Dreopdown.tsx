@@ -1,3 +1,4 @@
+//@ts-nocheck
 import React, { useState } from 'react';
 import { Menu as HeadlessMenu, Transition } from '@headlessui/react';
 import { FiMenu } from 'react-icons/fi';

@@ -1,6 +1,1 @@
-self.__NEXT_FONT_MANIFEST={
-  "pages": {},
-  "app": {},
-  "appUsingSizeAdjust": false,
-  "pagesUsingSizeAdjust": false
-}
+self.__NEXT_FONT_MANIFEST="{\"pages\":{},\"app\":{\"/workspaces/oursolutions6/node_modules/next/font/google/target.css?{\\\"path\\\":\\\"src/app/layout.tsx\\\",\\\"import\\\":\\\"Inter\\\",\\\"arguments\\\":[{\\\"weight\\\":\\\"400\\\",\\\"subsets\\\":[\\\"latin\\\"]}],\\\"variableName\\\":\\\"impira\\\"}\":[\"static/media/457c19822e909381-s.p.woff2\"]},\"appUsingSizeAdjust\":true,\"pagesUsingSizeAdjust\":false}"

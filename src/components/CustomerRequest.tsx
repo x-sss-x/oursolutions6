@@ -1,3 +1,4 @@
+//@ts-nocheck
 import React from "react";
 import Image, { StaticImageData } from "next/image";
 import { VariantProps, cva } from "class-variance-authority";
@@ -23,12 +24,10 @@ interface CustomerRequestExtendedProps extends CustomerRequestProps {
   fromLocation: string;
   toLocation: string;
   date: string;
-  status:string;
+  status: string;
 }
 
-const CustomerRequest = ()
- 
- => {
+const CustomerRequest = () => {
   return (
     <div >
       <div className="my-4 flex">

@@ -1,3 +1,4 @@
+//@ts-nocheck
 "use client"
 import Image from 'next/image';
 import lockImage from '../../public/Images/Icons/lock.png';

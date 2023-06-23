@@ -24,7 +24,7 @@ export const inputStyles = cva('relative flex items-center w-96 xs:w-48 mx-auto'
   },
 });
 
-interface InputExtendedProps extends InputProps {
+export interface InputExtendedProps extends InputProps {
   placeholder: string;
   inputVariant?:
     | 'default'

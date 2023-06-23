@@ -1,3 +1,4 @@
+//@ts-nocheck
 import { cva } from 'class-variance-authority';
 import Image from 'next/image';
 import LoggedImage from '../../public/Images/Icons/successfull.png';

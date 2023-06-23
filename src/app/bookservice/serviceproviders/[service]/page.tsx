@@ -1,7 +1,7 @@
 "use client"
 import { useParams } from "next/navigation";
 import ProfileIcon from "../../../../../public/Images/Profile/profile.png";
-import Profile from "@/components/Profile";
+import Profile from "@/components/profile";
 import Link from "next/link";
 import { useState } from "react";
 

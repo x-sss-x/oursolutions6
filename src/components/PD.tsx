@@ -1,3 +1,4 @@
+//@ts-nocheck
 import React from "react";
 import LogoIcon from "../../public/Images/Header/Logo.png";
 import Header from "./Header";

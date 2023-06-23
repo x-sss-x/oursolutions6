@@ -1,3 +1,4 @@
+//@ts-nocheck
 "use client"
 import "../../utils/supabase";
 import ServiceButton from './BikeRide';

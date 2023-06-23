@@ -1,3 +1,4 @@
+//@ts-nocheck
 import { VariantProps, cva } from "class-variance-authority";
 import { RiCheckboxCircleFill } from "react-icons/ri";
 

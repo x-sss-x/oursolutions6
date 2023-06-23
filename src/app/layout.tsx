@@ -1,10 +1,9 @@
 import "./globals.css";
-import Providers from "./Provider";
 import { Inter } from "next/font/google";
 
 const impira = Inter({
-  weight:"400",
-  subsets:["latin"]
+  weight: "400",
+  subsets: ["latin"]
 })
 
 export default function RootLayout({
@@ -15,8 +14,7 @@ export default function RootLayout({
   return (
     <html lang="en">
       <body className="w-[100vw] h-[100vh]" style={impira.style}>
-        
-        <Providers>{children}</Providers>
+        {children}
       </body>
     </html>
   );

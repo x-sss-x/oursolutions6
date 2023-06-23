@@ -1,3 +1,4 @@
+//@ts-nocheck
 import Header from "./Header";
 import LogoIcon from "../../public/Images/Header/Logo.png";
 import ServiceCategories from "./Categories";

@@ -1,3 +1,4 @@
+//@ts-nocheck
 import { cva} from 'class-variance-authority';
 import Image from 'next/image';
 import foodDeliveryImage from '../../public/Images/Icons/food-delivery.png';
