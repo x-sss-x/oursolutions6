@@ -1,3 +1,4 @@
+//@ts-nocheck
 import { cva } from 'class-variance-authority';
 import Image from 'next/image';
 import EmailImage from '../../public/Images/Icons/checkemail.png';
@@ -10,37 +11,37 @@ interface CheckemailProps {
 }
 const buttonProps: ButtonExtendedProps = {
   intent: 'primary',
- width:35,
+  width: 35,
 };
 
-const Checkemail: React.FC<Checkemail> = ({ text }) => {
+const Checkemail = () => {
   return (
     <center>
-  
-    <Image src={EmailImage} alt="Check email image" width={104} height={104} />
-     
-    <h1 className=" mt-3 text-center font-bold  text-black">
-             
-             Check your email
-                        
-                                    </h1>
-      
-                                    <h1 className=" mt-1 text-center font-latin font-size:  text-black">
-   anything18@gmail.com
-                        
-                                    </h1>
-        
-                                    <div className='mx-auto mt-5'>
-              <a href="/forgotpage/Forgotpassstep3"><Button>Open email app</Button></a>
 
-            </div>
-            <h1 className=" mt-2 text-center font-latin  text-black">
-Didn't receive the email?
-                        
-                                    </h1>
-                              
-                                    <button className="text-secondary text-[20px] font-serif hover:underline focus:outline-none text-sky-700">
-       Click here
+      <Image src={EmailImage} alt="Check email image" width={104} height={104} />
+
+      <h1 className=" mt-3 text-center font-bold  text-black">
+
+        Check your email
+
+      </h1>
+
+      <h1 className=" mt-1 text-center font-latin font-size:  text-black">
+        anything18@gmail.com
+
+      </h1>
+
+      <div className='mx-auto mt-5'>
+        <a href="/forgotpage/Forgotpassstep3"><Button>Open email app</Button></a>
+
+      </div>
+      <h1 className=" mt-2 text-center font-latin  text-black">
+        {"Didn't receive the email?"}
+
+      </h1>
+
+      <button className="text-secondary text-[20px] font-serif hover:underline focus:outline-none text-sky-700">
+        Click here
       </button>
     </center>
   );

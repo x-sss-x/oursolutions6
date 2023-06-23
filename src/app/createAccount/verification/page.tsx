@@ -1,7 +1,7 @@
 "use client"
 import React, { useState } from 'react';
 
-const page = () => {
+const Verification = () => {
     const [code, setCode] = useState('');
 
     const handleChange = (event: any) => {
@@ -51,4 +51,4 @@ const page = () => {
     );
 };
 
-export default page;
+export default Verification;
