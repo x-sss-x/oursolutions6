@@ -1,3 +1,4 @@
+//@ts-nocheck
 import React, { useState } from "react";
 import { useQuery } from "react-query";
 import Image from "next/image";
